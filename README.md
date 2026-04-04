@@ -1,7 +1,7 @@
-# 💫 Hi 👋, I'm Imran Alam
-**A passionate Cloud Engineer || DevOps Engineer || Kafka Admin from India**
+# 💫 Hi 👋, I'm Harsh Kumar
+**A passionate Artificial Intelligence || DevOps Engineer || **
 
-Email Me 👉 ✉️ **alamimran613@live.com** For Collaboration/Project or Anything Else. 😊😊
+Email Me 👉 ✉️ **harshkkumaar196@gmail.com** For Collaboration/Project or Anything Else. 😊😊
 
 - 🔭 **I’m currently working on:** AI Assistant
 - 🌱 **I’m currently learning:** Machine Learning ,NLP , and Deep Learning 
