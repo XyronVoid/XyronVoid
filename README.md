@@ -15,6 +15,11 @@ Email Me 👉 ✉️ **harshkkumaar196@gmail.com** For Collaboration/Project or 
 ## 🔗 I am a Content Creator. 😊😊
 
 Stay updated with the latest tutorials and projects by subscribing to my YouTube channel and following on Instagram, Facebook and Twitter.
+<!-- Snake Game Repo View -->
+
+<div align="center">
+  <img src="https://profile-readme-generator.com/assets/snake.svg" alt="Snake animation" />
+</div>
 
 
 # 💻 Tech Stack:
