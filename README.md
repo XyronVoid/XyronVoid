@@ -1,19 +1,21 @@
 Hi 👋, I'm XyronVoid  
 An Unknown Entity in the Digital Realm  
 
-⚡ AI Architect | System Builder | Exploring the Unknown  
+> "Not a person. A process."
+
+⚡ Architect of Intelligence | Building Systems Beyond Reality  
 
 🧠 Currently Building: Intelligent Systems & AI Entities  
 🌱 Learning: Machine Learning, Deep Learning, NLP  
 ⚔️ Mission: Create powerful AI systems beyond limits  
 🌌 Focus: Code, Intelligence, and Digital Power  
 
-📡 Connect: Through the network  
+📡 Contact Protocol: Access restricted  
 
-⚡ Fun Fact: I don't chase technology, I evolve with it
-## 🔗 I am a Content Creator. 😊😊
+⚡ Fun Fact: I don't chase technology, I evolve with it  
 
-Stay updated with the latest tutorials and projects by subscribing to my YouTube channel and following on Instagram, Facebook and Twitter.
+## 🌐 Digital Presence  
+Content & knowledge flows through the network.
 <!-- Snake Game Repo View -->
 
 <div align="center">
@@ -29,7 +31,7 @@ Stay updated with the latest tutorials and projects by subscribing to my YouTube
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=Coder-Harsh-Kumar&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact)
 
 ## 🏆 GitHub Trophies
-![Harsh's GitHub stats](https://github-readme-stats.vercel.app/api?username=Coder-Harsh-Kumar&show_icons=true&theme=radical)
+![XyronVoid stats](https://github-readme-stats.vercel.app/api?username=Coder-Harsh-Kumar&show_icons=true&theme=radical)
 
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
