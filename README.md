@@ -35,8 +35,6 @@ Content & knowledge flows through the network.
 
 ## 🧠 LeetCode Stats
 ![LeetCode Stats](https://leetcard.jacoblin.cool/VoidAxiom?theme=dark&font=Karma&ext=heatmap)
-## 🧠 LeetCode Stats
-
 
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
