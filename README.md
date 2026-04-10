@@ -33,9 +33,8 @@ Content & knowledge flows through the network.
 ## 🏆 GitHub Trophies
 ![XyronVoid stats](https://github-readme-stats.vercel.app/api?username=Coder-Harsh-Kumar&show_icons=true&theme=radical)
 
-## 🧠 LeetCode Activity
-
-![LeetCode Heatmap](https://leetcard.jacoblin.cool/XyronVoid?theme=dark&font=Karma&ext=heatmap)
+## 📊 LeetCode Activity
+![LeetCode Graph](https://leetcode-activity-graph.vercel.app/graph?username=VoidAxiom&theme=github-dark)
 
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
