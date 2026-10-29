@@ -1,0 +1,96 @@
+{
+  "business": {
+    "name": "Iron Pulse Fitness",
+    "tagline": "Gym · Strength · Cardio · Yoga",
+    "category": "gym",
+    "logo": "",
+    "since": "2019"
+  },
+  "contact": {
+    "phone": "+91 91234 56789",
+    "whatsapp": "919123456789",
+    "email": "join@ironpulse.example",
+    "address": "2nd Floor, Shastri Bridge Road, Jhusi, Prayagraj, Uttar Pradesh 211019",
+    "mapEmbedUrl": "",
+    "directionsUrl": ""
+  },
+  "timezone": "Asia/Kolkata",
+  "hours": {
+    "mon": "05:30-11:00, 16:00-22:00",
+    "tue": "05:30-11:00, 16:00-22:00",
+    "wed": "05:30-11:00, 16:00-22:00",
+    "thu": "05:30-11:00, 16:00-22:00",
+    "fri": "05:30-11:00, 16:00-22:00",
+    "sat": "05:30-11:00, 16:00-22:00",
+    "sun": "06:00-10:00"
+  },
+  "social": {
+    "instagram": "https://instagram.com/",
+    "facebook": ""
+  },
+  "theme": {
+    "preset": "bold-colour",
+    "accent": "#e8562a"
+  },
+  "whatsappMessage": "Hi Iron Pulse! I want to know about membership plans and a free trial.",
+  "hero": {
+    "eyebrow": "Free 1-day trial",
+    "headline": "Get stronger. Feel unstoppable.",
+    "subtext": "Modern machines, certified trainers and a motivating crowd. Weight loss, muscle gain or general fitness, we have a plan for you.",
+    "image": "assets/images/gym/hero.svg"
+  },
+  "about": {
+    "title": "Not just a gym. A fitness family.",
+    "text": "Iron Pulse Fitness has 4,000 sq ft of training space with imported strength equipment, a full cardio zone and a separate yoga & Zumba studio.\n\nEvery new member gets a free body-composition check and a diet plan from our certified trainers.",
+    "image": "assets/images/gym/about.svg",
+    "highlights": [
+      { "value": "4,000", "label": "Sq ft floor" },
+      { "value": "6", "label": "Certified trainers" },
+      { "value": "800+", "label": "Members" }
+    ]
+  },
+  "sections": {
+    "services": { "title": "Membership Plans", "subtitle": "Simple plans. No joining-fee surprises." },
+    "gallery": { "title": "Inside the Gym", "subtitle": "Take a look around." }
+  },
+  "services": [
+    { "name": "Monthly Membership", "description": "Full gym and cardio access, locker and a starter workout plan.", "price": "₹1,200 / month", "icon": "dumbbell" },
+    { "name": "Quarterly Membership", "description": "3 months of full access plus a free diet consultation.", "price": "₹3,000 / 3 months", "icon": "calendar" },
+    { "name": "Personal Training", "description": "One-on-one coaching with a certified trainer, 12 sessions a month.", "price": "₹4,000 / month", "icon": "user" },
+    { "name": "Weight Loss Program", "description": "8-week fat-loss plan with weekly check-ins and diet tracking.", "price": "₹5,500 / 8 weeks", "icon": "flame" },
+    { "name": "Yoga & Zumba", "description": "Morning and evening group classes for all fitness levels.", "price": "₹900 / month", "icon": "yoga" },
+    { "name": "Cardio Only", "description": "Treadmills, cycles, cross-trainers and rowing machines.", "price": "₹800 / month", "icon": "run" }
+  ],
+  "offers": [
+    { "title": "New Year Offer", "text": "Join the annual plan and get 2 months free + a gym t-shirt.", "validTill": "2027-01-31" }
+  ],
+  "gallery": [
+    { "src": "assets/images/gym/gallery-1.svg", "alt": "Strength zone" },
+    { "src": "assets/images/gym/gallery-2.svg", "alt": "Cardio machines" },
+    { "src": "assets/images/gym/gallery-3.svg", "alt": "Free weights" },
+    { "src": "assets/images/gym/gallery-4.svg", "alt": "Yoga studio" },
+    { "src": "assets/images/gym/gallery-5.svg", "alt": "Personal training session" },
+    { "src": "assets/images/gym/gallery-6.svg", "alt": "Group class" }
+  ],
+  "testimonials": [
+    { "name": "Aman Y.", "text": "Lost 11 kg in 4 months. The trainers actually care and check your form every day.", "rating": 5 },
+    { "name": "Sneha P.", "text": "Separate yoga room and a safe, respectful atmosphere for women. Highly recommended.", "rating": 5 },
+    { "name": "Vikas T.", "text": "Best equipment in Jhusi at a fair price. Clean washrooms too.", "rating": 4 }
+  ],
+  "faq": [
+    { "q": "Can I try the gym before joining?", "a": "Yes! Your first day is free. Just message us on WhatsApp to book a trial slot." },
+    { "q": "Are there female trainers?", "a": "Yes, we have female trainers in both morning and evening batches." },
+    { "q": "Is parking available?", "a": "Free two-wheeler parking is available right outside the building." },
+    { "q": "Can I pause my membership?", "a": "Quarterly and annual members can pause once for up to 15 days." }
+  ],
+  "seo": {
+    "title": "Iron Pulse Fitness | Gym in Jhusi, Prayagraj",
+    "description": "Modern gym in Jhusi, Prayagraj with certified trainers, cardio, strength, yoga and Zumba. Free 1-day trial. Join on WhatsApp.",
+    "url": "",
+    "image": ""
+  },
+  "credit": {
+    "text": "Website by QuanShade Labs",
+    "url": "https://github.com/XyronVoid"
+  }
+}
