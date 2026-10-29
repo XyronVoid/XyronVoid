@@ -1,0 +1,97 @@
+{
+  "business": {
+    "name": "Velvet Touch Salon",
+    "tagline": "Unisex Salon & Bridal Studio",
+    "category": "salon",
+    "logo": "",
+    "since": "2016"
+  },
+  "contact": {
+    "phone": "+91 98765 43210",
+    "whatsapp": "919876543210",
+    "email": "hello@velvettouch.example",
+    "address": "Near Hanuman Mandir, Main Road, Jhusi, Prayagraj, Uttar Pradesh 211019",
+    "mapEmbedUrl": "https://www.google.com/maps?q=Jhusi%2C%20Prayagraj&output=embed",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Jhusi%2C%20Prayagraj"
+  },
+  "timezone": "Asia/Kolkata",
+  "hours": {
+    "mon": "10:00-20:30",
+    "tue": "closed",
+    "wed": "10:00-20:30",
+    "thu": "10:00-20:30",
+    "fri": "10:00-20:30",
+    "sat": "09:30-21:00",
+    "sun": "09:30-21:00"
+  },
+  "social": {
+    "instagram": "https://instagram.com/",
+    "facebook": "https://facebook.com/"
+  },
+  "theme": {
+    "preset": "dark-gold",
+    "accent": "#c8925b"
+  },
+  "whatsappMessage": "Hi Velvet Touch! I saw your website and would like to book an appointment.",
+  "hero": {
+    "eyebrow": "Jhusi · Prayagraj",
+    "headline": "Look your best, every single day",
+    "subtext": "Haircuts, colour, skin care and bridal makeup by trained stylists. Hygienic tools, premium products and honest prices.",
+    "image": "assets/images/salon/hero.svg"
+  },
+  "about": {
+    "title": "A calm, clean space made for you",
+    "text": "Velvet Touch started in 2016 with one chair and one promise: every client leaves feeling special. Today our team of 6 stylists serves families across Jhusi and Prayagraj.\n\nWe use branded products, sterilise every tool after each client, and always tell you the price before we start.",
+    "image": "assets/images/salon/about.svg",
+    "highlights": [
+      { "value": "8+", "label": "Years of service" },
+      { "value": "5,000+", "label": "Happy clients" },
+      { "value": "4.9★", "label": "Google rating" }
+    ]
+  },
+  "sections": {
+    "services": { "title": "Services & Prices", "subtitle": "Clear prices. No hidden charges." },
+    "gallery": { "title": "Our Work", "subtitle": "Real looks, real clients." }
+  },
+  "services": [
+    { "name": "Haircut & Styling", "description": "Consultation, wash, precision cut and blow-dry for men, women and kids.", "price": "From ₹199", "icon": "scissors" },
+    { "name": "Hair Colour & Highlights", "description": "Global colour, highlights and root touch-up with ammonia-free options.", "price": "From ₹999", "icon": "brush" },
+    { "name": "Hair Spa & Keratin", "description": "Deep conditioning, keratin and smoothening for frizz-free hair.", "price": "From ₹799", "icon": "droplet" },
+    { "name": "Facial & Clean-up", "description": "Fruit, gold and D-tan facials for glowing, healthy skin.", "price": "From ₹499", "icon": "sparkle" },
+    { "name": "Bridal Makeup", "description": "HD and airbrush bridal looks with a free trial session.", "price": "From ₹7,999", "icon": "crown" },
+    { "name": "Manicure & Pedicure", "description": "Relaxing hand and foot care with nail shaping and polish.", "price": "From ₹399", "icon": "hand" }
+  ],
+  "offers": [
+    { "title": "Festive Glow Offer", "text": "Get 20% off on any facial + free hair wash this month.", "validTill": "2027-12-31" }
+  ],
+  "gallery": [
+    { "src": "assets/images/salon/gallery-1.svg", "alt": "Styling station" },
+    { "src": "assets/images/salon/gallery-2.svg", "alt": "Hair colour result" },
+    { "src": "assets/images/salon/gallery-3.svg", "alt": "Bridal makeup" },
+    { "src": "assets/images/salon/gallery-4.svg", "alt": "Nail art" },
+    { "src": "assets/images/salon/gallery-5.svg", "alt": "Facial room" },
+    { "src": "assets/images/salon/gallery-6.svg", "alt": "Salon reception" }
+  ],
+  "testimonials": [
+    { "name": "Priya S.", "text": "Best haircut I have had in Prayagraj. They listened to what I wanted and the price was exactly what they said.", "rating": 5 },
+    { "name": "Rahul M.", "text": "Very clean salon and polite staff. My beard trim and hair spa were excellent.", "rating": 5 },
+    { "name": "Anjali K.", "text": "Did my bridal makeup here. Everyone at the wedding asked who my makeup artist was!", "rating": 5 },
+    { "name": "Neha G.", "text": "Lovely facial, very relaxing. Booking on WhatsApp was super easy.", "rating": 4 }
+  ],
+  "faq": [
+    { "q": "Do I need an appointment?", "a": "Walk-ins are welcome, but booking on WhatsApp means no waiting time, especially on weekends." },
+    { "q": "Do you offer bridal packages?", "a": "Yes. Our bridal packages include a free trial, pre-bridal skin care and on-the-day makeup. Message us for details." },
+    { "q": "Which products do you use?", "a": "We use trusted brands like L'Oréal Professionnel, Lakmé and O3+. Ammonia-free colour is available." },
+    { "q": "Do you accept UPI?", "a": "Yes, we accept UPI, cards and cash." }
+  ],
+  "seo": {
+    "title": "Velvet Touch Salon | Unisex Salon in Jhusi, Prayagraj",
+    "description": "Haircuts, hair colour, facials and bridal makeup in Jhusi, Prayagraj. Clear prices, hygienic tools. Book on WhatsApp.",
+    "url": "",
+    "image": ""
+  },
+  "credit": {
+    "text": "Website by QuanShade Labs",
+    "url": "https://github.com/XyronVoid"
+  }
+}

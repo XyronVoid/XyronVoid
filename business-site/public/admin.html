@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f0e0c">
+  <title>Owner Admin</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script src="assets/js/icons.js" defer></script>
+  <script src="assets/js/admin.js" defer></script>
+</head>
+<body>
+  <!-- Login -->
+  <main class="login" id="login-view">
+    <form class="login__box" id="login-form">
+      <p class="eyebrow">Owner admin</p>
+      <h1 id="login-title">Welcome back</h1>
+      <p class="muted">Enter your password to update your website.</p>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" id="password" autocomplete="current-password" required>
+      </label>
+      <p class="error" id="login-error" role="alert" hidden></p>
+      <button class="btn btn--primary btn--big" type="submit" id="login-btn">Log in</button>
+      <a class="link" href="/">← Back to website</a>
+    </form>
+  </main>
+
+  <!-- Panel -->
+  <div class="app" id="app-view" hidden>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Admin</p>
+        <strong id="biz-name">Your business</strong>
+      </div>
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="/" target="_blank" rel="noopener">View site</a>
+        <button class="btn btn--ghost" id="logout">Log out</button>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" data-tab="services" aria-selected="true"><span aria-hidden="true">✂️</span>Services</button>
+      <button role="tab" data-tab="offers" aria-selected="false"><span aria-hidden="true">🏷️</span>Offers</button>
+      <button role="tab" data-tab="gallery" aria-selected="false"><span aria-hidden="true">🖼️</span>Photos</button>
+      <button role="tab" data-tab="info" aria-selected="false"><span aria-hidden="true">🕒</span>Hours &amp; contact</button>
+    </nav>
+
+    <main class="panel" id="panel" aria-live="polite"></main>
+  </div>
+
+  <!-- Edit sheet (services / offers / captions) -->
+  <dialog class="sheet" id="sheet">
+    <form method="dialog" class="sheet__form" id="sheet-form" novalidate>
+      <h2 id="sheet-title">Edit</h2>
+      <div id="sheet-body"></div>
+      <p class="error" id="sheet-error" role="alert" hidden></p>
+      <div class="sheet__actions">
+        <button class="btn btn--ghost btn--big" value="cancel" type="button" id="sheet-cancel">Cancel</button>
+        <button class="btn btn--primary btn--big" value="save" type="submit" id="sheet-save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{
+  "business": {
+    "name": "CarePoint Family Clinic",
+    "tagline": "General Physician & Dental Care",
+    "category": "clinic",
+    "logo": "",
+    "since": "2012"
+  },
+  "contact": {
+    "phone": "+91 99887 66554",
+    "whatsapp": "919988766554",
+    "email": "appointments@carepoint.example",
+    "address": "Opp. State Bank, Civil Lines, Prayagraj, Uttar Pradesh 211001",
+    "mapEmbedUrl": "",
+    "directionsUrl": ""
+  },
+  "timezone": "Asia/Kolkata",
+  "hours": {
+    "mon": "10:00-14:00, 17:00-21:00",
+    "tue": "10:00-14:00, 17:00-21:00",
+    "wed": "10:00-14:00, 17:00-21:00",
+    "thu": "10:00-14:00, 17:00-21:00",
+    "fri": "10:00-14:00, 17:00-21:00",
+    "sat": "10:00-14:00",
+    "sun": "closed"
+  },
+  "social": {
+    "instagram": "",
+    "facebook": "https://facebook.com/"
+  },
+  "theme": {
+    "preset": "light-minimal",
+    "accent": "#1f7a6d"
+  },
+  "whatsappMessage": "Hello CarePoint Clinic, I would like to book an appointment.",
+  "hero": {
+    "eyebrow": "Trusted care since 2012",
+    "headline": "Caring for your family's health",
+    "subtext": "Experienced doctors, a modern dental chair and an in-house lab. Book your appointment on WhatsApp and skip the waiting room.",
+    "image": "assets/images/clinic/hero.svg"
+  },
+  "about": {
+    "title": "Meet Dr. Sharma & team",
+    "text": "Dr. A. K. Sharma (MBBS, MD) and Dr. Ritu Sharma (BDS, MDS) have cared for families in Prayagraj for over 12 years.\n\nOur clinic follows strict sterilisation protocols, keeps digital records of every visit and sends reports straight to your WhatsApp.",
+    "image": "assets/images/clinic/about.svg",
+    "highlights": [
+      { "value": "12+", "label": "Years of practice" },
+      { "value": "20,000+", "label": "Patients treated" },
+      { "value": "2", "label": "Specialist doctors" }
+    ]
+  },
+  "sections": {
+    "services": { "title": "Treatments & Fees", "subtitle": "Transparent consultation and treatment fees." },
+    "gallery": { "title": "Our Clinic", "subtitle": "Clean, modern and comfortable." }
+  },
+  "services": [
+    { "name": "General Consultation", "description": "Fever, BP, diabetes, thyroid and everyday health problems.", "price": "₹400", "icon": "stethoscope" },
+    { "name": "Dental Check-up & Cleaning", "description": "Full check-up, scaling and polishing for healthy gums.", "price": "From ₹600", "icon": "tooth" },
+    { "name": "Root Canal Treatment", "description": "Painless single-sitting RCT with digital X-ray.", "price": "From ₹3,500", "icon": "shield" },
+    { "name": "Child Care", "description": "Vaccinations, growth checks and care for common childhood illnesses.", "price": "₹400", "icon": "baby" },
+    { "name": "Lab Tests", "description": "Blood sugar, CBC, lipid profile, thyroid and more. Reports on WhatsApp.", "price": "From ₹150", "icon": "activity" },
+    { "name": "Health Check Package", "description": "40+ tests with a doctor's review, ideal for adults above 30.", "price": "₹1,499", "icon": "heart" }
+  ],
+  "offers": [],
+  "gallery": [
+    { "src": "assets/images/clinic/gallery-1.svg", "alt": "Reception area" },
+    { "src": "assets/images/clinic/gallery-2.svg", "alt": "Consultation room" },
+    { "src": "assets/images/clinic/gallery-3.svg", "alt": "Dental chair" },
+    { "src": "assets/images/clinic/gallery-4.svg", "alt": "In-house lab" },
+    { "src": "assets/images/clinic/gallery-5.svg", "alt": "Waiting area" },
+    { "src": "assets/images/clinic/gallery-6.svg", "alt": "Sterilisation unit" }
+  ],
+  "testimonials": [
+    { "name": "Mrs. Verma", "text": "Dr. Sharma explains everything patiently. We have been coming here for our whole family for years.", "rating": 5 },
+    { "name": "Rohit A.", "text": "My root canal was completely painless. Very professional dental care.", "rating": 5 },
+    { "name": "Kavita D.", "text": "Booking on WhatsApp saved me an hour of waiting. Reports came on my phone the same evening.", "rating": 5 }
+  ],
+  "faq": [
+    { "q": "Do I need an appointment?", "a": "Walk-ins are welcome, but appointments get priority. Book on WhatsApp to get a time slot." },
+    { "q": "Is the clinic open on Sunday?", "a": "The clinic is closed on Sunday. For emergencies, please call the phone number given above." },
+    { "q": "Do you accept health insurance?", "a": "We provide bills and reports for reimbursement claims. Cashless facility is not available." },
+    { "q": "How do I get my lab reports?", "a": "Reports are sent to your WhatsApp number and printed copies are available at the clinic." }
+  ],
+  "seo": {
+    "title": "CarePoint Family Clinic | Doctor & Dentist in Civil Lines, Prayagraj",
+    "description": "General physician and dental clinic in Civil Lines, Prayagraj. Consultation, root canal, child care and lab tests. Book on WhatsApp.",
+    "url": "",
+    "image": ""
+  },
+  "credit": {
+    "text": "Website by QuanShade Labs",
+    "url": "https://github.com/XyronVoid"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "business-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reusable local business website template with an owner admin panel (QuanShade Labs).",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node serve.mjs",
+    "dev": "node serve.mjs",
+    "use": "node scripts/use-example.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.0.0"
+  }
+}
