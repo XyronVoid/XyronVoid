@@ -323,3 +323,10 @@ h2 { font-size: clamp(30px, 4vw, 46px); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Mobile menu fix: a blurred (backdrop-filter) header traps position:fixed children,
+   so on small screens the header gets a solid background and rises above the dim overlay when the menu is open. */
+@media (max-width: 900px) {
+  .header { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--bg); }
+  .header:has(.nav.open) { z-index: 96; }
+}

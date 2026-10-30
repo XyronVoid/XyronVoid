@@ -370,3 +370,10 @@ em { font-style: italic; color: var(--gold); font-weight: 500; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Mobile menu fix: a blurred (backdrop-filter) header traps position:fixed children,
+   so on small screens the header gets a solid background and rises above the dim overlay when the menu is open. */
+@media (max-width: 1180px) {
+  .header { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--paper); }
+  .header:has(.nav.open) { z-index: 96; }
+}

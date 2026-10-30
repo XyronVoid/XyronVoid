@@ -1,45 +1,40 @@
 # dewly.: Skincare & Beauty Store Template
 
-A soft, playful skincare and beauty store template built with plain HTML, CSS and JavaScript. It needs no build step. Open `index.html` and it works.
+A soft, playful skincare store template in **one single file**: `index.html`.
+
+The design, code and product visuals are all inside that file, so it works:
+- when you open just `index.html` on its own (phone, file preview, email attachment)
+- offline, with no internet (fonts fall back to system fonts)
+- on GitHub Pages, Netlify or any web host
 
 ## Design
 
-Blush, peach and plum colours, Fraunces and DM Sans fonts, morphing blob shapes, rounded cards and sticker badges. It looks different from the other four templates in this repo.
-
-Every product has a **CSS-drawn bottle, jar, tube or dropper** in its own tint behind the photo. If a photo can't load, the drawing shows instead, so the store still looks good.
+Blush, peach and plum colours, Fraunces and DM Sans fonts, a morphing blob, rounded cards and sticker badges.
+Every product is drawn in **pure CSS** (bottle, dropper, jar or tube in its own colour, with a printed label), so there are no photos that could fail to load.
 
 ## Features
 
 - **Shop by skin concern** (acne, dullness, dark spots, dryness, oil, fine lines) plus a skin-type filter
-- Product cards with size options, ratings, concern tags and the **key ingredient on hover**
+- Product cards with size options, ratings, concern tags and the key ingredient on hover
 - **Skin Quiz**: 4 questions build a personalised 3- or 5-step routine, which can be added to the bag at **15% off**
-- **Build your routine**: pick any 3 products for **20% off**, with a live bundle panel
-- **Before/After slider** you drag to compare, plus clinical-result stats
+- **Pick any 3** bundle builder at **20% off**
+- **Before/After slider** (illustrated skin close-up) with result stats
 - **Ingredient guide**: tap an ingredient to see every product that has it
-- Bag with:
-  - Free-shipping progress (₹499) that continues to the samples goal
-  - **Subscribe & save 10%** (monthly delivery) on each item
-  - **Choose 2 free samples** above ₹999
-  - A clear total of routine, bundle and subscription savings
-- **Checkout on WhatsApp**, including deals, subscriptions and chosen samples
-- Reviews, newsletter and a fully responsive layout; the bag is saved in the browser
+- Bag with a free-shipping bar, **Subscribe & save 10%**, **2 free samples above ₹999**, and a clear total of savings
+- **Checkout on WhatsApp** with the full order
+- Mobile menu, and the bag is saved in the browser
 
 ## Make it your own
 
-Everything is at the top of `script.js`:
+Open `index.html` and scroll to the `<script>` at the bottom. Edit the block marked **SETTINGS**:
 
 | What | Where |
 |---|---|
-| WhatsApp number, shipping, discounts, sample rules | `CONFIG` (dummy number by default, so change it) |
-| Products (photo, sizes and prices, concerns, skin types, tint, shape) | `PRODUCTS` |
+| WhatsApp number, shipping, discounts, sample rules | `CONFIG` (dummy number `919876543210` by default, so change it) |
+| Products: name, label, sizes and prices, concerns, skin types, colour (`tint`), pack `shape` | `PRODUCTS` |
 | Ingredients | `INGREDIENTS` |
-| Free samples list | `SAMPLES` |
-| Quiz questions and routine logic | `QUESTIONS` and `buildRoutine()` |
+| Free samples | `SAMPLES` |
 
-Photos use Unsplash ids. To use your own, put files in an `images/` folder and set `img: "images/serum.jpg"`.
+**Real product photos (optional):** add `img: "images/serum.jpg"` to a product and put the photo in an `images/` folder next to `index.html`. The photo is shown on top of the drawing; if it ever fails to load, the drawing shows instead.
 
-Change colours in `:root` at the top of `style.css`.
-
-## Go live for free
-
-Use GitHub **Settings → Pages**, or drag this folder onto [Netlify Drop](https://app.netlify.com/drop).
+Change colours in `:root` at the top of the `<style>` block.
