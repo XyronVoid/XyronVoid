@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KANAK — Everyday Fine Jewellery</title>
+<meta name="description" content="KANAK — minimal demi-fine jewellery in 18k gold vermeil and solid 14k gold. Hypoallergenic, hallmarked 925 silver, free engraving and gift wrap." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="announce">Complimentary insured shipping · Free engraving · 30-day returns</div>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <nav class="nav" id="nav">
+      <a href="#shop">Shop</a>
+      <a href="#look">Shop the look</a>
+      <a href="#materials">Materials</a>
+      <a href="#sizes">Ring sizes</a>
+      <a href="#journal">Care</a>
+    </nav>
+    <a href="#top" class="logo" id="top">KANAK</a>
+    <div class="actions">
+      <button class="icon-btn" id="wishBtn" aria-label="Open wishlist">
+        <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+        <span class="count" id="wishCount">0</span>
+      </button>
+      <button class="icon-btn" id="bagBtn" aria-label="Open bag">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="count" id="bagCount">0</span>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow">N° 01 — The Everyday Edit</span>
+      <h1>Gold you'll <em>never</em><br />take off.</h1>
+      <p>Quiet, light pieces in 18k gold vermeil and solid 14k gold. Made to be layered, stacked and worn every single day, in the shower, at the gym and to bed.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-dark">Shop the edit</a>
+        <a href="#look" class="link-arrow">Shop the look →</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="images/hero.jpg" alt="Gold rings, bracelets and earrings laid out on linen beside a vase of dried grass" />
+      <figcaption>Pavé bangles, dainty rings &amp; citrine drops</figcaption>
+    </figure>
+  </div>
+  <ul class="wrap promises">
+    <li><b>925</b><span>Hallmarked silver base</span></li>
+    <li><b>2.5µ</b><span>Thick 18k gold layer</span></li>
+    <li><b>0%</b><span>Nickel or lead</span></li>
+    <li><b>∞</b><span>Lifetime replating</span></li>
+  </ul>
+</section>
+
+<!-- Shop -->
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow">N° 02 — The collection</span>
+        <h2>Pieces for <em>every day</em></h2>
+      </div>
+      <div class="controls">
+        <div class="cats" id="cats"></div>
+        <select id="sort" class="select" aria-label="Sort">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- Shop the look -->
+<section class="sec sec-dark" id="look">
+  <div class="wrap look">
+    <div class="look-photo" id="lookPhoto">
+      <img src="images/look-layered.jpg" alt="Woman in a cream knit wearing a layered gold necklace, bracelets and rings" loading="lazy" />
+    </div>
+    <div class="look-copy">
+      <span class="eyebrow">N° 03 — Shop the look</span>
+      <h2>The <em>soft layer</em></h2>
+      <p>A long coin chain, a stack of fine bracelets and a ring on every other finger. Tap the dots on the photo to see each piece.</p>
+      <div class="look-list" id="lookList"></div>
+      <button class="btn btn-light" id="addLook">Add the full look</button>
+      <small class="muted-light" id="lookNote"></small>
+    </div>
+  </div>
+</section>
+
+<!-- Materials -->
+<section class="sec" id="materials">
+  <div class="wrap">
+    <div class="head head-center">
+      <span class="eyebrow">N° 04 — Materials</span>
+      <h2>Two ways to wear <em>gold</em></h2>
+      <p class="sub">Every piece comes in both. Pick yours on the product page.</p>
+    </div>
+    <div class="compare">
+      <article>
+        <span class="swatch vermeil"></span>
+        <h3>18k Gold Vermeil</h3>
+        <p class="price-note">Everyday price</p>
+        <ul>
+          <li>Thick 2.5 micron layer of 18k gold</li>
+          <li>Over hallmarked 925 sterling silver</li>
+          <li>Waterproof for daily wear</li>
+          <li>Free replating for life</li>
+        </ul>
+      </article>
+      <article class="solid">
+        <span class="swatch gold"></span>
+        <h3>Solid 14k Gold</h3>
+        <p class="price-note">An heirloom, about 4× the price</p>
+        <ul>
+          <li>Gold all the way through</li>
+          <li>BIS hallmarked 585 gold</li>
+          <li>Never fades, never needs replating</li>
+          <li>Buy-back at 80% of gold value</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Ring sizes -->
+<section class="sec sec-sand" id="sizes">
+  <div class="wrap sizer">
+    <div>
+      <span class="eyebrow">N° 05 — Find your ring size</span>
+      <h2>No ring sizer? <em>No problem.</em></h2>
+      <ol class="how">
+        <li>Wrap a thin strip of paper or thread around the base of your finger.</li>
+        <li>Mark where it meets, then lay it flat and measure the length in millimetres.</li>
+        <li>Enter it here. We'll show your Indian ring size.</li>
+      </ol>
+    </div>
+    <div class="sizer-card">
+      <label for="circ">Finger circumference</label>
+      <div class="circ-row">
+        <input type="range" id="circ" min="44" max="66" step="0.5" value="52" />
+        <output id="circOut">52 mm</output>
+      </div>
+      <div class="size-result">
+        <span>Your size</span>
+        <b id="sizeOut">12</b>
+        <small id="sizeAlt">US 6 · UK L½</small>
+      </div>
+      <p class="muted small">Between two sizes? Pick the larger one. Knuckles are often wider than the finger base.</p>
+      <button class="btn btn-dark btn-full" id="saveSize">Use this size for rings</button>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="head head-center">
+      <span class="eyebrow">N° 06 — Worn by you</span>
+      <h2>"I haven't taken it off <em>since</em>"</h2>
+    </div>
+    <div class="reviews">
+      <figure><blockquote>"The ring stack has survived six months of swimming, gym and dishes. Still as bright as the day it came."</blockquote><figcaption>— Ananya R., Mumbai · <b>Dainty Ring Stack</b></figcaption></figure>
+      <figure><blockquote>"Got my daughter's initial engraved on the coin necklace. The packaging alone made me cry a little."</blockquote><figcaption>— Shalini M., Jaipur · <b>Coin Layer Necklace</b></figcaption></figure>
+      <figure><blockquote>"I have sensitive ears and these are the first gold-tone earrings that don't itch. Ordering the green pair next."</blockquote><figcaption>— Farah K., Hyderabad · <b>Citrine Drops</b></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Care -->
+<section class="sec sec-sand" id="journal">
+  <div class="wrap care">
+    <div>
+      <span class="eyebrow">N° 07 — Care</span>
+      <h2>Made to last a <em>lifetime</em></h2>
+    </div>
+    <div class="care-list">
+      <details open><summary>Can I shower and swim in it?</summary><p>Yes. Vermeil and solid gold are both fine in water. Rinse off chlorine and salt water and pat dry to keep the shine.</p></details>
+      <details><summary>What if the gold wears off?</summary><p>Send your vermeil piece back any time and we'll replate it for free, for life. You only pay shipping.</p></details>
+      <details><summary>Is it safe for sensitive skin?</summary><p>All our pieces are nickel-free and lead-free. The base is hallmarked 925 sterling silver.</p></details>
+      <details><summary>How does engraving work?</summary><p>Add up to 10 characters on bracelets and necklaces. Engraved pieces ship in 3–4 days and can't be returned.</p></details>
+      <details><summary>What's the return policy?</summary><p>30 days, no questions asked, for unworn pieces in their original box. Earrings can't be returned for hygiene reasons.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="sec news-sec">
+  <div class="wrap news">
+    <h2>First look at <em>new drops</em></h2>
+    <p>Join the list for early access and 10% off your first piece.</p>
+    <form id="newsForm" class="news-form">
+      <input type="email" placeholder="Email address" required aria-label="Email" />
+      <button class="btn btn-dark" type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a href="#top" class="logo">KANAK</a>
+      <p>Everyday fine jewellery, designed in Jaipur and made by hand.</p>
+    </div>
+    <div><h5>Shop</h5><a href="#shop">Earrings</a><a href="#shop">Rings</a><a href="#shop">Bracelets</a><a href="#shop">Necklaces</a></div>
+    <div><h5>Help</h5><a href="#sizes">Ring size guide</a><a href="#journal">Care &amp; replating</a><a href="#journal">Returns</a><a href="#materials">Materials</a></div>
+    <div><h5>Contact</h5><a href="#top">Instagram</a><a href="#top">hello@kanak.in</a><a href="#top">+91 98765 43210</a></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© <span id="year"></span> KANAK Jewellery</span><span>UPI · Cards · EMI · COD</span></div>
+</footer>
+
+<!-- Product view -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+  <div class="modal-card">
+    <button class="x" data-close aria-label="Close">✕</button>
+    <div class="m-media"><img id="mImg" src="" alt="" /></div>
+    <div class="m-body">
+      <span class="eyebrow" id="mCat"></span>
+      <h3 id="mTitle"></h3>
+      <p class="m-price" id="mPrice"></p>
+      <p class="m-desc" id="mDesc"></p>
+      <h4>Metal</h4>
+      <div class="opts" id="mMetal"></div>
+      <div id="mSizeWrap">
+        <h4>Ring size <a href="#sizes" data-close class="tiny-link">Find my size</a></h4>
+        <div class="ring-sizes" id="mSizes"></div>
+      </div>
+      <div id="mEngraveWrap">
+        <h4>Engraving <small>Free · up to 10 letters</small></h4>
+        <input type="text" id="mEngrave" maxlength="10" placeholder="e.g. A · 2026" />
+      </div>
+      <p class="m-detail" id="mDetail"></p>
+      <div class="m-actions">
+        <button class="btn btn-dark" id="mAdd">Add to bag</button>
+        <button class="icon-btn heart" id="mWish" aria-label="Save to wishlist"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Drawer (bag + wishlist) -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Bag and wishlist">
+  <div class="drawer-head">
+    <div class="drawer-tabs">
+      <button class="dtab on" data-tab="bag">Bag (<span id="tabBag">0</span>)</button>
+      <button class="dtab" data-tab="wish">Wishlist (<span id="tabWish">0</span>)</button>
+    </div>
+    <button class="x" data-close aria-label="Close">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <div id="bagPane">
+      <div id="bagItems"></div>
+      <div class="gift" id="giftBox">
+        <label class="check"><input type="checkbox" id="giftWrap" /> <span>Gift wrap in our linen pouch &amp; box <b id="giftPrice"></b></span></label>
+        <textarea id="giftNote" rows="2" maxlength="150" placeholder="Gift note (we'll handwrite it, no prices inside)" hidden></textarea>
+      </div>
+    </div>
+    <div id="wishPane" hidden></div>
+  </div>
+  <div class="drawer-foot" id="bagFoot">
+    <div class="row"><span>Subtotal</span><span id="bSub">₹0</span></div>
+    <div class="row" id="bGiftRow" hidden><span>Gift wrap</span><span id="bGift">₹0</span></div>
+    <div class="row"><span>Insured shipping</span><span>Free</span></div>
+    <div class="row total"><span>Total</span><span id="bTotal">₹0</span></div>
+    <p class="emi" id="emi"></p>
+    <button class="btn btn-dark btn-full" id="checkout">Checkout on WhatsApp</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
