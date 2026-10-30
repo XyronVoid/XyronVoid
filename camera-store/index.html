@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FILMWALA — Refurbished Film Cameras</title>
+<meta name="description" content="FILMWALA — hand-tested vintage film cameras, lenses and film developing in India. Graded honestly, 6-month warranty, trade in your old camera." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=IBM+Plex+Mono:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="edge" aria-hidden="true"><div class="edge-track" id="edgeTrack"></div></div>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a href="#top" class="logo" id="top"><span class="rec"></span>FILMWALA</a>
+    <nav class="nav" id="nav">
+      <a href="#shop">Cameras</a>
+      <a href="#grades">Grading</a>
+      <a href="#trade">Trade-in</a>
+      <a href="#develop">Develop</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="actions">
+      <button class="bag-btn" id="bagBtn" aria-label="Open bag">BAG <span id="bagCount">0</span></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="mono-label">Roll 01 · Exp. 36 · ISO 400</p>
+      <h1>Every old camera has <em>one more roll</em> in it.</h1>
+      <p class="lead">We hunt down vintage film cameras, strip them, clean them, replace the light seals and shoot a full test roll before they reach you. Graded honestly. Guaranteed for 6 months.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-red">Browse cameras</a>
+        <a href="#trade" class="btn btn-ghost">Sell us yours</a>
+      </div>
+    </div>
+    <div class="sheet" id="sheet" aria-label="Contact sheet of cameras in stock"></div>
+  </div>
+  <ul class="wrap promises">
+    <li><b>01</b>Tested with a real roll of film</li>
+    <li><b>02</b>New light seals &amp; cleaned optics</li>
+    <li><b>03</b>6-month warranty on every camera</li>
+    <li><b>04</b>A free roll of film in the box</li>
+  </ul>
+</section>
+
+<!-- Shop -->
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="mono-label">Contact sheet № 2 — In stock now</p>
+        <h2>On the <em>shelf</em></h2>
+      </div>
+      <div class="controls">
+        <select id="gradeSel" class="select" aria-label="Condition grade"></select>
+        <select id="sortSel" class="select" aria-label="Sort">
+          <option value="featured">Sort: featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="old">Oldest first</option>
+        </select>
+      </div>
+    </div>
+    <div class="formats" id="formats"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- Grades -->
+<section class="sec sec-paper" id="grades">
+  <div class="wrap">
+    <p class="mono-label">How we grade</p>
+    <h2>No "vintage charm" <em>excuses</em></h2>
+    <div class="grades" id="gradeList"></div>
+  </div>
+</section>
+
+<!-- Trade-in -->
+<section class="sec" id="trade">
+  <div class="wrap split">
+    <div>
+      <p class="mono-label">Trade-in</p>
+      <h2>Dadaji's camera in a <em>cupboard?</em></h2>
+      <p class="lead">Get an instant estimate, then send us photos on WhatsApp. We pay by UPI within 48 hours of receiving it, or give you 15% more as store credit.</p>
+    </div>
+    <form class="tool" id="tradeForm">
+      <label>What is it?
+        <select id="tType"></select>
+      </label>
+      <label>What state is it in?
+        <select id="tCond"></select>
+      </label>
+      <label class="check"><input type="checkbox" id="tBox" /> I have the original box or case</label>
+      <div class="readout">
+        <span>Estimated offer</span>
+        <b id="tOut">₹0</b>
+        <small id="tCredit"></small>
+      </div>
+      <button class="btn btn-red btn-full" type="submit">Send photos on WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- Develop -->
+<section class="sec sec-safelight" id="develop">
+  <div class="wrap split">
+    <div>
+      <p class="mono-label">Develop &amp; scan</p>
+      <h2>Shot a roll? We'll <em>develop</em> it.</h2>
+      <p class="lead">Post your exposed film to our lab. We develop it the same week and email you the scans. Negatives come back in sleeves, if you want them.</p>
+      <ul class="ticks">
+        <li>Colour (C-41) and black &amp; white</li>
+        <li>Scans emailed in 5–7 days</li>
+        <li>Free return shipping on 3+ rolls</li>
+      </ul>
+    </div>
+    <form class="tool" id="devForm">
+      <label>Film format
+        <select id="dFormat"></select>
+      </label>
+      <div class="field">
+        <span class="field-label">Number of rolls</span>
+        <div class="stepper"><button type="button" data-roll="-1" aria-label="Fewer rolls">−</button><output id="dRolls">1</output><button type="button" data-roll="1" aria-label="More rolls">+</button></div>
+      </div>
+      <div class="field">
+        <span class="field-label">Scan size</span>
+        <div class="seg" id="dScan"></div>
+      </div>
+      <label class="check"><input type="checkbox" id="dNeg" /> Post my negatives back <span id="dNegNote"></span></label>
+      <div class="readout">
+        <span>Your total</span>
+        <b id="dOut">₹0</b>
+        <small id="dNote"></small>
+      </div>
+      <button class="btn btn-red btn-full" type="submit">Book on WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec">
+  <div class="wrap">
+    <p class="mono-label">From the darkroom wall</p>
+    <h2>Shot on a <em>FILMWALA</em> camera</h2>
+    <div class="prints">
+      <figure class="print"><blockquote>"The Nikkormat arrived with a test roll from their lab. Every frame was sharp. I've shot 14 rolls on it since."</blockquote><figcaption>Kabir · Mumbai</figcaption></figure>
+      <figure class="print"><blockquote>"Traded in my father's old folding camera and got more than OLX offers. Paid by UPI the next day."</blockquote><figcaption>Ishita · Kolkata</figcaption></figure>
+      <figure class="print"><blockquote>"Their B grade is other shops' A grade. Honest photos of every scratch before I paid."</blockquote><figcaption>Rohan · Bengaluru</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-paper" id="faq">
+  <div class="wrap split">
+    <div>
+      <p class="mono-label">Before you load up</p>
+      <h2>Good <em>questions</em></h2>
+    </div>
+    <div class="faq">
+      <details open><summary>What does the warranty cover?</summary><p>If the shutter, meter or film advance stops working within 6 months, we repair it free or refund you. You can extend it to 18 months at checkout.</p></details>
+      <details><summary>Where do I buy film?</summary><p>Every camera comes with one free roll. Add a 3-roll starter pack in your bag, or buy from any photo store. 35mm and 120 film are easy to find.</p></details>
+      <details><summary>Can I see the actual camera?</summary><p>Yes. Message us on WhatsApp and we'll send close-up photos or a video of the exact camera before you pay.</p></details>
+      <details><summary>Do you ship across India?</summary><p>Yes, insured and packed in foam. Most orders arrive in 3–5 days.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a href="#top" class="logo"><span class="rec"></span>FILMWALA</a>
+      <p>Refurbished film cameras, tested on real film. Pune, since 2018.</p>
+    </div>
+    <div><h5>Shop</h5><a href="#shop">35mm</a><a href="#shop">Medium format</a><a href="#shop">Instant</a><a href="#shop">Lenses &amp; gear</a></div>
+    <div><h5>Services</h5><a href="#trade">Trade-in</a><a href="#develop">Develop &amp; scan</a><a href="#faq">Repairs</a></div>
+    <div><h5>Contact</h5><a href="#top">Instagram</a><a href="#top">lab@filmwala.in</a><a href="#top">+91 98765 43210</a></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© <span id="year"></span> FILMWALA</span><span>UPI · Cards · No-cost EMI</span></div>
+</footer>
+
+<!-- Compare tray -->
+<div class="tray" id="tray" hidden>
+  <div class="wrap tray-in">
+    <div class="tray-slots" id="traySlots"></div>
+    <div class="tray-actions">
+      <button class="btn btn-small btn-ghost" id="clearCompare">Clear</button>
+      <button class="btn btn-small btn-red" id="openCompare">Compare</button>
+    </div>
+  </div>
+</div>
+
+<!-- Detail / compare modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal-card" id="modalCard">
+    <button class="x" data-close aria-label="Close">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Bag -->
+<div class="scrim" id="scrim"></div>
+<aside class="bag" id="bag" aria-label="Your bag">
+  <div class="bag-head"><h3>Your bag</h3><button class="x" data-close aria-label="Close bag">✕</button></div>
+  <div class="bag-body">
+    <div id="bagItems"></div>
+    <label class="check pack" id="packRow"><input type="checkbox" id="filmPack" /> <span>Add a 3-roll film starter pack <b id="packPrice"></b></span></label>
+  </div>
+  <div class="bag-foot" id="bagFoot">
+    <div class="row"><span>Items</span><span id="bSub">₹0</span></div>
+    <div class="row" id="bExtraRow" hidden><span>Warranty &amp; film</span><span id="bExtra">₹0</span></div>
+    <div class="row"><span>Insured shipping</span><span>Free</span></div>
+    <div class="row total"><span>Total</span><span id="bTotal">₹0</span></div>
+    <p class="emi" id="emi"></p>
+    <button class="btn btn-red btn-full" id="checkout">Checkout on WhatsApp</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
