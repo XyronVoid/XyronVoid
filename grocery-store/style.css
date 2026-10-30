@@ -83,16 +83,15 @@ h2 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; }
 .hl::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 12px; background: var(--yellow); z-index: -1; border-radius: 4px; opacity: .8; }
 .hero p { color: var(--muted); font-size: 17px; margin-bottom: 26px; }
 .hero-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-.hero-art { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); width: 340px; height: 340px; }
-.basket { position: absolute; inset: 0; display: grid; place-items: center; font-size: 170px; filter: drop-shadow(0 20px 30px rgba(0,0,0,.12)); }
-.e { position: absolute; font-size: 54px; animation: bob 4s ease-in-out infinite; filter: drop-shadow(0 8px 10px rgba(0,0,0,.12)); }
-.e1 { top: 0; left: 20px; }
-.e2 { top: 10px; right: 30px; animation-delay: -.6s; }
-.e3 { top: 45%; left: -20px; animation-delay: -1.2s; }
-.e4 { bottom: 10px; left: 30px; animation-delay: -1.8s; }
-.e5 { bottom: 0; right: 40px; animation-delay: -2.4s; }
-.e6 { top: 42%; right: -20px; animation-delay: -3s; }
-@keyframes bob { 50% { transform: translateY(-14px) rotate(6deg); } }
+.hero-art { position: absolute; right: 34px; top: 50%; transform: translateY(-50%); width: 330px; height: 330px; }
+.hero-photo { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 24px 50px rgba(29, 43, 36, .18); }
+.hero-art > .big { width: 100%; height: 100%; display: grid; place-items: center; font-size: 170px; background: #fff; border-radius: 50%; }
+.float-card { position: absolute; background: #fff; border-radius: 16px; padding: 10px 14px; box-shadow: var(--shadow); display: flex; flex-direction: column; line-height: 1.25; animation: bob 4s ease-in-out infinite; }
+.float-card b { font-size: 14px; }
+.float-card small { font-size: 12px; color: var(--muted); }
+.fc-1 { left: -40px; bottom: 40px; }
+.fc-2 { right: -20px; top: 20px; animation-delay: -2s; }
+@keyframes bob { 50% { transform: translateY(-10px); } }
 
 .offer { position: relative; overflow: hidden; border-radius: 24px; padding: 26px 28px; display: flex; justify-content: space-between; align-items: center; transition: transform .3s var(--ease); }
 .offer:hover { transform: translateY(-4px); }
@@ -101,8 +100,19 @@ h2 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; }
 .offer a { font-weight: 700; font-size: 14px; }
 .offer-orange { background: var(--orange-soft); color: #8a3b0c; }
 .offer-blue { background: var(--blue-soft); color: #1d4b8f; }
-.offer-emoji { font-size: 84px; transform: rotate(-12deg); transition: transform .4s var(--ease); }
-.offer:hover .offer-emoji { transform: rotate(0) scale(1.1); }
+.offer-photo, .offer > .big { width: 120px; height: 120px; flex-shrink: 0; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: var(--shadow); transition: transform .4s var(--ease); }
+.offer > .big { display: grid; place-items: center; font-size: 60px; background: #fff; }
+.offer:hover .offer-photo, .offer:hover > .big { transform: scale(1.08) rotate(-4deg); }
+
+/* Photos */
+.photo { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s var(--ease); }
+.thumb, .cat-tile, .combo-emojis, .c-thumb, .s-emoji { overflow: hidden; }
+.thumb .photo { position: absolute; inset: 0; }
+.card:hover .thumb .photo { transform: scale(1.08); }
+.cat:hover .cat-tile .photo { transform: scale(1.1); }
+.combo-emojis { padding: 0; height: 170px; display: grid; place-items: center; }
+.combo:hover .photo { transform: scale(1.06); }
+.off, .veg { z-index: 1; }
 
 /* Categories */
 .cats { display: grid; grid-template-columns: repeat(8, 1fr); gap: 14px; }
@@ -281,9 +291,7 @@ h2 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; }
 @media (max-width: 1150px) {
   .grid { grid-template-columns: repeat(4, 1fr); }
   .cats { grid-template-columns: repeat(4, 1fr); }
-  .hero-art { width: 260px; height: 260px; right: 10px; }
-  .basket { font-size: 120px; }
-  .e { font-size: 40px; }
+  .hero-art { width: 260px; height: 260px; right: 24px; }
 }
 
 @media (max-width: 900px) {
@@ -315,7 +323,7 @@ h2 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; }
   .hero { grid-template-columns: 1fr; }
   .hero-main { grid-column: auto; padding: 30px 22px; }
   .offer { padding: 20px 22px; }
-  .offer-emoji { font-size: 64px; }
+  .offer-photo, .offer > .big { width: 90px; height: 90px; }
   .cats { grid-template-columns: repeat(4, 1fr); gap: 10px; }
   .cat { font-size: 11px; }
   .cat-tile { font-size: 34px; border-radius: 18px; }

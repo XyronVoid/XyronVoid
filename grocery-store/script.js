@@ -10,49 +10,53 @@ const CONFIG = {
   pincodes: [],               // Leave empty to accept any valid pincode, or list e.g. ["400001", "400002"]
 };
 
+// Product photos: use an Unsplash photo id, or your own file such as img: "images/tomato.jpg".
+// If a photo fails to load, the emoji is shown instead.
+const u = (id, w = 500) => (id.startsWith("photo-") ? `https://images.unsplash.com/${id}?w=${w}&q=80&auto=format&fit=crop` : id);
+
 const CATEGORIES = [
-  { name: "Fruits",     emoji: "🍎", bg: "#ffe9e4" },
-  { name: "Vegetables", emoji: "🥦", bg: "#e4f6e6" },
-  { name: "Dairy",      emoji: "🥛", bg: "#e8f2ff" },
-  { name: "Bakery",     emoji: "🍞", bg: "#fff1dc" },
-  { name: "Snacks",     emoji: "🍿", bg: "#fff6cc" },
-  { name: "Beverages",  emoji: "🧃", bg: "#f1e8ff" },
-  { name: "Staples",    emoji: "🌾", bg: "#f6efe2" },
-  { name: "Eggs & Meat",emoji: "🥚", bg: "#ffeedd" },
+  { name: "Fruits", img: u("photo-1610832958506-aa56368176cf", 300), emoji: "🍎", bg: "#ffe9e4" },
+  { name: "Vegetables", img: u("photo-1540420773-4e5a5b5e7c9b", 300), emoji: "🥦", bg: "#e4f6e6" },
+  { name: "Dairy", img: u("photo-1550583724-b2692b85b150", 300), emoji: "🥛", bg: "#e8f2ff" },
+  { name: "Bakery", img: u("photo-1509440159596-0249088772ff", 300), emoji: "🍞", bg: "#fff1dc" },
+  { name: "Snacks", img: u("photo-1621939514649-280e2ee25f60", 300), emoji: "🍿", bg: "#fff6cc" },
+  { name: "Beverages", img: u("photo-1622483767028-3f66f32aef97", 300), emoji: "🧃", bg: "#f1e8ff" },
+  { name: "Staples", img: u("photo-1586201375761-83865001e31c", 300), emoji: "🌾", bg: "#f6efe2" },
+  { name: "Eggs & Meat", img: u("photo-1582722872445-44dc5f7e3c8f", 300), emoji: "🥚", bg: "#ffeedd" },
 ];
 
 // Each product can have several pack sizes (variants) with their own price and MRP
 const PRODUCTS = [
-  { id: 1,  name: "Fresh Bananas (Robusta)",  cat: "Fruits",     emoji: "🍌", best: true, v: [["6 pcs", 42, 55], ["12 pcs", 79, 110]] },
-  { id: 2,  name: "Shimla Apples",            cat: "Fruits",     emoji: "🍎", best: true, v: [["4 pcs", 129, 160], ["1 kg", 219, 280]] },
-  { id: 3,  name: "Alphonso Mangoes",         cat: "Fruits",     emoji: "🥭", v: [["2 pcs", 149, 199], ["6 pcs", 399, 540]] },
-  { id: 4,  name: "Hass Avocado",             cat: "Fruits",     emoji: "🥑", v: [["1 pc", 129, 169]] },
-  { id: 5,  name: "Desi Tomatoes",            cat: "Vegetables", emoji: "🍅", best: true, v: [["500 g", 24, 35], ["1 kg", 45, 68]] },
-  { id: 6,  name: "Onions",                   cat: "Vegetables", emoji: "🧅", best: true, v: [["1 kg", 39, 52], ["2 kg", 75, 104]] },
-  { id: 7,  name: "Fresh Broccoli",           cat: "Vegetables", emoji: "🥦", v: [["250 g", 59, 80]] },
-  { id: 8,  name: "Orange Carrots",           cat: "Vegetables", emoji: "🥕", v: [["500 g", 32, 45]] },
-  { id: 9,  name: "Toned Milk",               cat: "Dairy",      emoji: "🥛", best: true, v: [["500 ml", 28, 28], ["1 L", 56, 56]] },
-  { id: 10, name: "Fresh Paneer",             cat: "Dairy",      emoji: "🧀", best: true, v: [["200 g", 89, 99], ["500 g", 210, 245]] },
-  { id: 11, name: "Thick Curd",               cat: "Dairy",      emoji: "🥣", v: [["400 g", 45, 50]] },
-  { id: 12, name: "Salted Butter",            cat: "Dairy",      emoji: "🧈", v: [["100 g", 58, 60], ["500 g", 275, 285]] },
-  { id: 13, name: "Whole Wheat Bread",        cat: "Bakery",     emoji: "🍞", best: true, v: [["400 g", 45, 50]] },
-  { id: 14, name: "Butter Croissants",        cat: "Bakery",     emoji: "🥐", v: [["2 pcs", 99, 120]] },
-  { id: 15, name: "Classic Salted Chips",     cat: "Snacks",     emoji: "🍟", v: [["52 g", 20, 20], ["115 g", 50, 50]] },
-  { id: 16, name: "Butter Popcorn",           cat: "Snacks",     emoji: "🍿", v: [["90 g", 49, 60]] },
-  { id: 17, name: "Choco Chip Cookies",       cat: "Snacks",     emoji: "🍪", best: true, v: [["200 g", 75, 90]] },
-  { id: 18, name: "Mixed Fruit Juice",        cat: "Beverages",  emoji: "🧃", v: [["1 L", 99, 125]] },
-  { id: 19, name: "Tender Coconut Water",     cat: "Beverages",  emoji: "🥥", v: [["1 pc", 55, 70]] },
-  { id: 20, name: "Assam Tea",                cat: "Beverages",  emoji: "🍵", v: [["250 g", 135, 160]] },
-  { id: 21, name: "Basmati Rice",             cat: "Staples",    emoji: "🍚", best: true, v: [["1 kg", 129, 175], ["5 kg", 599, 850]] },
-  { id: 22, name: "Chakki Atta",              cat: "Staples",    emoji: "🌾", v: [["5 kg", 249, 310], ["10 kg", 479, 600]] },
-  { id: 23, name: "Farm Eggs",                cat: "Eggs & Meat",emoji: "🥚", best: true, v: [["6 pcs", 54, 60], ["12 pcs", 99, 120]] },
-  { id: 24, name: "Fresh Chicken Curry Cut",  cat: "Eggs & Meat",emoji: "🍗", veg: false, v: [["500 g", 169, 210]] },
+  { id: 1,  name: "Fresh Bananas (Robusta)", img: u("photo-1571771894821-ce9b6c11b08e"),  cat: "Fruits",     emoji: "🍌", best: true, v: [["6 pcs", 42, 55], ["12 pcs", 79, 110]] },
+  { id: 2,  name: "Shimla Apples", img: u("photo-1560806887-1e4cd0b6cbd6"),            cat: "Fruits",     emoji: "🍎", best: true, v: [["4 pcs", 129, 160], ["1 kg", 219, 280]] },
+  { id: 3,  name: "Alphonso Mangoes", img: u("photo-1553279768-865429fa0078"),         cat: "Fruits",     emoji: "🥭", v: [["2 pcs", 149, 199], ["6 pcs", 399, 540]] },
+  { id: 4,  name: "Hass Avocado", img: u("photo-1523049673857-eb18f1d7b578"),             cat: "Fruits",     emoji: "🥑", v: [["1 pc", 129, 169]] },
+  { id: 5,  name: "Desi Tomatoes", img: u("photo-1546094096-0df4bcaaa337"),            cat: "Vegetables", emoji: "🍅", best: true, v: [["500 g", 24, 35], ["1 kg", 45, 68]] },
+  { id: 6,  name: "Onions", img: u("photo-1618512496248-a07fe83aa8cb"),                   cat: "Vegetables", emoji: "🧅", best: true, v: [["1 kg", 39, 52], ["2 kg", 75, 104]] },
+  { id: 7,  name: "Fresh Broccoli", img: u("photo-1459411621453-7b03977f4bfc"),           cat: "Vegetables", emoji: "🥦", v: [["250 g", 59, 80]] },
+  { id: 8,  name: "Orange Carrots", img: u("photo-1598170845058-32b9d6a5da37"),           cat: "Vegetables", emoji: "🥕", v: [["500 g", 32, 45]] },
+  { id: 9,  name: "Toned Milk", img: u("photo-1563636619-e9143da7973b"),               cat: "Dairy",      emoji: "🥛", best: true, v: [["500 ml", 28, 28], ["1 L", 56, 56]] },
+  { id: 10, name: "Fresh Paneer", img: u("photo-1631452180519-c014fe946bc7"),             cat: "Dairy",      emoji: "🧀", best: true, v: [["200 g", 89, 99], ["500 g", 210, 245]] },
+  { id: 11, name: "Thick Curd", img: u("photo-1488477181946-6428a0291777"),               cat: "Dairy",      emoji: "🥣", v: [["400 g", 45, 50]] },
+  { id: 12, name: "Salted Butter", img: u("photo-1589985270826-4b7bb135bc9d"),            cat: "Dairy",      emoji: "🧈", v: [["100 g", 58, 60], ["500 g", 275, 285]] },
+  { id: 13, name: "Whole Wheat Bread", img: u("photo-1509440159596-0249088772ff"),        cat: "Bakery",     emoji: "🍞", best: true, v: [["400 g", 45, 50]] },
+  { id: 14, name: "Butter Croissants", img: u("photo-1555507036-ab1f4038808a"),        cat: "Bakery",     emoji: "🥐", v: [["2 pcs", 99, 120]] },
+  { id: 15, name: "Classic Salted Chips", img: u("photo-1566478989037-eec170784d0b"),     cat: "Snacks",     emoji: "🍟", v: [["52 g", 20, 20], ["115 g", 50, 50]] },
+  { id: 16, name: "Butter Popcorn", img: u("photo-1578849278619-e73505e9610f"),           cat: "Snacks",     emoji: "🍿", v: [["90 g", 49, 60]] },
+  { id: 17, name: "Choco Chip Cookies", img: u("photo-1499636136210-6f4ee915583e"),       cat: "Snacks",     emoji: "🍪", best: true, v: [["200 g", 75, 90]] },
+  { id: 18, name: "Mixed Fruit Juice", img: u("photo-1600271886742-f049cd451bba"),        cat: "Beverages",  emoji: "🧃", v: [["1 L", 99, 125]] },
+  { id: 19, name: "Tender Coconut Water", img: u("photo-1525385133512-2f3bdd039054"),     cat: "Beverages",  emoji: "🥥", v: [["1 pc", 55, 70]] },
+  { id: 20, name: "Assam Tea", img: u("photo-1564890369478-c89ca6d9cde9"),                cat: "Beverages",  emoji: "🍵", v: [["250 g", 135, 160]] },
+  { id: 21, name: "Basmati Rice", img: u("photo-1586201375761-83865001e31c"),             cat: "Staples",    emoji: "🍚", best: true, v: [["1 kg", 129, 175], ["5 kg", 599, 850]] },
+  { id: 22, name: "Chakki Atta", img: u("photo-1574323347407-f5e1ad6d020b"),              cat: "Staples",    emoji: "🌾", v: [["5 kg", 249, 310], ["10 kg", 479, 600]] },
+  { id: 23, name: "Farm Eggs", img: u("photo-1582722872445-44dc5f7e3c8f"),                cat: "Eggs & Meat",emoji: "🥚", best: true, v: [["6 pcs", 54, 60], ["12 pcs", 99, 120]] },
+  { id: 24, name: "Fresh Chicken Curry Cut", img: u("photo-1604503468506-a8da13d82791"),  cat: "Eggs & Meat",emoji: "🍗", veg: false, v: [["500 g", 169, 210]] },
 ];
 
 const COMBOS = [
-  { id: 101, name: "Breakfast Combo",     emoji: "🍞🥛🥚🧈", bg: "#fff1dc", desc: "Bread, 1L milk, 6 eggs & butter",          v: [["Combo", 199, 260]] },
-  { id: 102, name: "Weekly Veggie Basket",emoji: "🍅🧅🥕🥦", bg: "#e4f6e6", desc: "Tomato, onion, carrot & broccoli, 2.5 kg", v: [["Combo", 169, 235]] },
-  { id: 103, name: "Movie Night Pack",    emoji: "🍿🍟🍪🧃", bg: "#f1e8ff", desc: "Popcorn, chips, cookies & juice",          v: [["Combo", 229, 295]] },
+  { id: 101, name: "Breakfast Combo", img: u("photo-1525351484163-7529414344d8"),     emoji: "🍞🥛🥚🧈", bg: "#fff1dc", desc: "Bread, 1L milk, 6 eggs & butter",          v: [["Combo", 199, 260]] },
+  { id: 102, name: "Weekly Veggie Basket", img: u("photo-1540420773-4e5a5b5e7c9b"),emoji: "🍅🧅🥕🥦", bg: "#e4f6e6", desc: "Tomato, onion, carrot & broccoli, 2.5 kg", v: [["Combo", 169, 235]] },
+  { id: 103, name: "Movie Night Pack", img: u("photo-1621939514649-280e2ee25f60"),    emoji: "🍿🍟🍪🧃", bg: "#f1e8ff", desc: "Popcorn, chips, cookies & juice",          v: [["Combo", 229, 295]] },
 ];
 
 const COUPONS = [
@@ -80,6 +84,23 @@ let slot = 0;
 let activeCat = "Best sellers";
 const chosenVariant = {};                  // product id -> selected variant index
 
+/* ---------- Photos with emoji fallback ---------- */
+const pic = (p, cls = "") => p.img
+  ? `<img class="photo ${cls}" src="${p.img}" alt="${p.name}" loading="lazy" data-emoji="${p.emoji}" />`
+  : `<span class="big">${p.emoji}</span>`;
+
+function swapToEmoji(img) {
+  if (img.dataset.dead) return;
+  img.dataset.dead = 1;
+  const span = document.createElement("span");
+  span.className = "big";
+  span.textContent = img.dataset.emoji || "🛒";
+  img.replaceWith(span);
+}
+document.addEventListener("error", (e) => { if (e.target.matches?.("img[data-emoji]")) swapToEmoji(e.target); }, true);
+// Images in the HTML that failed before this script loaded
+$$("img[data-emoji]").forEach((i) => { if (i.complete && i.naturalWidth === 0) swapToEmoji(i); });
+
 /* ---------- Toast ---------- */
 let tt;
 function toast(msg) {
@@ -94,7 +115,7 @@ function toast(msg) {
 function renderCats() {
   $("#cats").innerHTML = CATEGORIES.map((c) => `
     <button class="cat ${activeCat === c.name ? "on" : ""}" data-cat="${c.name}">
-      <span class="cat-tile" style="background:${c.bg}">${c.emoji}</span>${c.name}
+      <span class="cat-tile" style="background:${c.bg}">${pic(c)}</span>${c.name}
     </button>`).join("");
   $("#tabs").innerHTML = ["Best sellers", ...CATEGORIES.map((c) => c.name)].map((n) =>
     `<button class="tab ${activeCat === n ? "on" : ""}" data-cat="${n}">${n}</button>`).join("");
@@ -117,7 +138,7 @@ function productCard(p) {
       <div class="thumb" style="background:${catBg(p)}">
         ${off ? `<span class="off">${off}%<br/>OFF</span>` : ""}
         ${p.veg === false ? "" : `<span class="veg" title="Vegetarian"></span>`}
-        <span class="big">${p.emoji}</span>
+        ${pic(p)}
       </div>
       <span class="eta">⏱ 30 MINS</span>
       <h3>${p.name}</h3>
@@ -144,7 +165,7 @@ function renderCombos() {
     const [, price, mrp] = c.v[0];
     return `
       <article class="combo" data-card="${c.id}">
-        <div class="combo-emojis" style="background:${c.bg}">${c.emoji}</div>
+        <div class="combo-emojis" style="background:${c.bg}">${pic(c)}</div>
         <div><h3>${c.name}</h3><p>${c.desc}</p></div>
         <div class="combo-foot">
           <div class="price"><b>${inr(price)}</b><s>${inr(mrp)}</s> <span class="save-tag">Save ${inr(mrp - price)}</span></div>
@@ -171,7 +192,7 @@ function renderSuggest(q) {
   box.innerHTML = hits.length
     ? hits.map((p) => `
         <button data-pick="${p.id}">
-          <span class="s-emoji" style="background:${catBg(p)}">${[...p.emoji][0]}</span>
+          <span class="s-emoji" style="background:${catBg(p)}">${pic({ ...p, emoji: [...p.emoji][0] })}</span>
           <span><b>${p.name}</b><small>${p.v[0][0]} · ${inr(p.v[0][1])}</small></span>
         </button>`).join("")
     : `<p class="none">No results for "${q}". Try "milk" or "apple".</p>`;
@@ -260,7 +281,7 @@ function renderCart() {
 
   $("#cartList").innerHTML = b.ls.map((l) => `
     <div class="c-item">
-      <span class="c-thumb" style="background:${catBg(l.p)}">${[...l.p.emoji][0]}</span>
+      <span class="c-thumb" style="background:${catBg(l.p)}">${pic({ ...l.p, emoji: [...l.p.emoji][0] })}</span>
       <div class="c-info"><h4>${l.p.name}</h4><small>${l.label}</small></div>
       <div class="c-right">${addControl(l.id, l.vi)}<b>${inr(l.price * l.qty)}</b></div>
     </div>`).join("");

@@ -2,7 +2,7 @@
 
 A bright, friendly grocery and quick-delivery store template built with plain HTML, CSS and JavaScript. It needs no build step. Open `index.html` and it works.
 
-Products use **emoji tiles** in place of photos, so nothing breaks if images fail to load. You can swap in real photos later.
+Products, categories, combos and banners use **real photos** (Unsplash). If a photo ever fails to load, a matching emoji tile is shown instead, so the design never breaks.
 
 ## Design
 
@@ -37,10 +37,17 @@ Everything is at the top of `script.js`:
 | Delivery areas | `CONFIG.pincodes` (empty = all pincodes) |
 | Categories and their colours | `CATEGORIES` |
 | Products and pack sizes `[label, price, MRP]` | `PRODUCTS` |
+| Product photo | `img: u("photo-…")` for Unsplash, or your own file: `img: "images/tomato.jpg"` |
 | Combos | `COMBOS` |
 | Coupon codes and rules | `COUPONS` |
 
 Change colours in `:root` at the top of `style.css`.
+
+## Using your own photos
+
+1. Make an `images/` folder next to `index.html`.
+2. Put your photos in it. Square photos around 500×500 work best.
+3. In `script.js`, change a product's `img` to `"images/your-photo.jpg"`.
 
 ## Go live for free
 
