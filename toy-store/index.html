@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LOOPSY — Handmade Crochet Toys</title>
+<meta name="description" content="LOOPSY — hand-crocheted cotton toys made by women artisans across India. Baby-safe options, a personalised adoption certificate and custom toys." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="ticker" aria-label="Offers">
+  <div class="ticker-track">
+    <span>★ Free shipping over ₹1,499</span><span>★ Every toy comes with an adoption certificate</span><span>★ Baby-safe embroidered eyes</span><span>★ 100% cotton yarn</span>
+    <span>★ Free shipping over ₹1,499</span><span>★ Every toy comes with an adoption certificate</span><span>★ Baby-safe embroidered eyes</span><span>★ 100% cotton yarn</span>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a href="#top" class="logo" id="top"><span class="logo-ball">🧶</span>LOOPSY</a>
+    <nav class="nav" id="nav">
+      <a href="#shop">Adopt</a>
+      <a href="#made">How it's made</a>
+      <a href="#makers">Makers</a>
+      <a href="#custom">Custom toy</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24"><path d="M3 4h3l2 11h11l2-8H7"/><circle cx="10" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/></svg>
+        <span id="cartCount">0</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero bento -->
+<section class="hero">
+  <div class="wrap bento">
+    <div class="tile t-main">
+      <span class="sticker s-pink">Handmade in India</span>
+      <h1>Toys with <mark>a soul</mark>, made one loop at a time.</h1>
+      <p>Every LOOPSY friend is hand-crocheted from soft cotton by women artisans, takes 4–12 hours to make and arrives with its own adoption certificate.</p>
+      <div class="cta">
+        <a href="#shop" class="btn btn-black">Adopt a friend →</a>
+        <a href="#custom" class="btn btn-white">Make it custom</a>
+      </div>
+    </div>
+    <a href="#shop" class="tile t-photo t-tall" data-view="10"><img src="images/bunny-siblings.jpg" alt="Three crochet bunnies standing side by side" /><span class="tile-label">Bunny Siblings</span></a>
+    <div class="tile t-stat t-yellow"><b id="statToys">4,200+</b><span>friends adopted</span></div>
+    <a href="#shop" class="tile t-photo" data-view="3"><img src="images/fox.jpg" alt="Crochet fox in a knitted hat and scarf" /><span class="tile-label">Rusty</span></a>
+    <div class="tile t-stat t-mint"><b>38</b><span>women artisans in 6 states</span></div>
+    <div class="tile t-stat t-blue"><b>0+</b><span>baby-safe, no small parts</span></div>
+  </div>
+</section>
+
+<!-- Shop -->
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="head">
+      <h2>Pick your <span class="hl hl-yellow">new best friend</span></h2>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- How it's made -->
+<section class="sec sec-pink" id="made">
+  <div class="wrap">
+    <h2 class="center">How a LOOPSY is <span class="hl hl-white">born</span></h2>
+    <div class="made">
+      <div class="step"><span class="num">01</span><span class="emoji">🧶</span><h3>Soft cotton yarn</h3><p>Milk cotton that's gentle on baby skin and doesn't shed fluff.</p></div>
+      <div class="step"><span class="num">02</span><span class="emoji">🪡</span><h3>4–12 hours by hand</h3><p>One artisan makes your toy from start to finish, stitch by stitch.</p></div>
+      <div class="step"><span class="num">03</span><span class="emoji">☁️</span><h3>Hypoallergenic fill</h3><p>Squishy polyester fibre fill, sewn in tight so it never leaks.</p></div>
+      <div class="step"><span class="num">04</span><span class="emoji">📜</span><h3>Signed &amp; certified</h3><p>A tag signed by the maker and an adoption certificate with your child's name.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Makers -->
+<section class="sec" id="makers">
+  <div class="wrap">
+    <div class="head">
+      <h2>Meet the <span class="hl hl-mint">makers</span></h2>
+      <p class="head-note">Every purchase pays a fair wage directly to the artisan who made it. Their name is on the tag.</p>
+    </div>
+    <div class="makers" id="makerList"></div>
+  </div>
+</section>
+
+<!-- Custom -->
+<section class="sec sec-yellow" id="custom">
+  <div class="wrap custom">
+    <div class="custom-copy">
+      <h2>Your pet. Your kid's drawing. <span class="hl hl-white">As a toy.</span></h2>
+      <p>Send us a photo of your dog, cat or your child's doodle and our makers will crochet a one-of-a-kind toy of it. We share a sketch and yarn colours before we start.</p>
+      <ul class="checks">
+        <li>From ₹2,499 · ready in 10–14 days</li>
+        <li>Free sketch and changes before making</li>
+        <li>Photo shared on WhatsApp after you send the form</li>
+      </ul>
+      <div class="custom-photo"><img src="images/fox-family.jpg" alt="Three crochet fox and deer friends in scarves" loading="lazy" /></div>
+    </div>
+    <form class="custom-form" id="customForm">
+      <h3>Custom toy request</h3>
+      <label>What should we make?
+        <select name="kind">
+          <option>My pet</option><option>My child's drawing</option><option>A character we love</option><option>Something else</option>
+        </select>
+      </label>
+      <label>Size
+        <select name="size" id="customSize"></select>
+      </label>
+      <label>Tell us about it
+        <textarea name="about" rows="3" required placeholder="E.g. a brown and white beagle called Momo with one floppy ear"></textarea>
+      </label>
+      <label>Your name
+        <input type="text" name="name" required placeholder="Your name" />
+      </label>
+      <button type="submit" class="btn btn-black btn-full">Send on WhatsApp →</button>
+    </form>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <h2 class="center">Hugged by <span class="hl hl-pink">4,200+ kids</span></h2>
+    <div class="notes">
+      <figure class="note n-yellow"><blockquote>"My son sleeps with Rusty every night. The certificate with his name on it is framed in his room!"</blockquote><figcaption>— Pooja, Pune ★★★★★</figcaption></figure>
+      <figure class="note n-mint"><blockquote>"Bought the baby-safe bunny for my newborn niece. Super soft, no plastic eyes, and it survived the washing machine."</blockquote><figcaption>— Aman, Delhi ★★★★★</figcaption></figure>
+      <figure class="note n-blue"><blockquote>"They made our late dog Bruno as a toy. My daughter cried happy tears. Worth every rupee."</blockquote><figcaption>— Sneha, Kochi ★★★★★</figcaption></figure>
+      <figure class="note n-pink"><blockquote>"You can feel it's handmade. The maker's signature on the tag is such a lovely touch."</blockquote><figcaption>— Rahul, Indore ★★★★☆</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-blue" id="faq">
+  <div class="wrap faq-wrap">
+    <h2>Questions? <span class="hl hl-white">Answers!</span></h2>
+    <div class="faq">
+      <details open><summary>Are the toys safe for babies?</summary><p>Yes, if you pick embroidered eyes. They have no hard parts and are tested to the EN71 toy safety standard. Plastic safety eyes are for ages 3 and up.</p></details>
+      <details><summary>Can I wash them?</summary><p>Hand wash in cold water with a mild soap, or use a gentle machine cycle inside a pillow cover. Dry flat in the shade.</p></details>
+      <details><summary>How long does delivery take?</summary><p>Mini and Classic toys are ready to ship in 1–2 days. Huggable toys are made to order and ship in about 7 days.</p></details>
+      <details><summary>What's on the adoption certificate?</summary><p>Your toy's name, the adopter's name, the adoption date and the maker's signature, printed on thick card and tucked into the box.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-big">LOOPSY</div>
+    <div class="foot-grid">
+      <p>Handmade crochet toys from women artisans across India. Made slowly, hugged forever.</p>
+      <div><h5>Shop</h5><a href="#shop">Woodland</a><a href="#shop">Winter friends</a><a href="#shop">Families</a><a href="#custom">Custom toys</a></div>
+      <div><h5>Help</h5><a href="#faq">Baby safety</a><a href="#faq">Washing</a><a href="#faq">Delivery</a></div>
+      <div><h5>Say hi</h5><a href="#top">Instagram</a><a href="#top">hello@loopsy.in</a><a href="#top">+91 98765 43210</a></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="year"></span> LOOPSY Handmade</span><span>UPI · Cards · COD</span></div>
+  </div>
+</footer>
+
+<!-- Adopt modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName" hidden>
+  <div class="modal-card">
+    <button class="x" data-close aria-label="Close">✕</button>
+    <div class="m-media"><img id="mImg" src="" alt="" /><span class="sticker s-yellow" id="mSpecies"></span></div>
+    <div class="m-body">
+      <h3 id="mName"></h3>
+      <p class="m-quote" id="mQuote"></p>
+      <p class="m-maker" id="mMaker"></p>
+      <h4>Size</h4>
+      <div class="opts" id="mSizes"></div>
+      <h4>Eyes</h4>
+      <div class="opts" id="mEyes"></div>
+      <h4>Adopter's name <small>for the certificate</small></h4>
+      <input type="text" id="mAdopter" maxlength="18" placeholder="E.g. Aarav" />
+      <label class="check"><input type="checkbox" id="mRibbon" /> <span>Embroider the name on a ribbon too <b id="mRibbonPrice"></b></span></label>
+      <div class="cert" id="mCert">
+        <small>Certificate of adoption</small>
+        <p><b id="cToy"></b> is now officially loved by</p>
+        <strong id="cKid">your little one</strong>
+        <span id="cDate"></span>
+      </div>
+      <button class="btn btn-black btn-full" id="mAdd">Adopt</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cart -->
+<div class="scrim" id="scrim"></div>
+<aside class="cart" id="cart" aria-label="Your cart">
+  <div class="cart-head"><h3>Your adoptions</h3><button class="x" data-close aria-label="Close cart">✕</button></div>
+  <div class="ship"><p id="shipMsg"></p><div class="ship-bar"><span id="shipBar"></span></div></div>
+  <div class="cart-body">
+    <div id="cartItems"></div>
+    <label class="check gift" id="giftRow"><input type="checkbox" id="giftWrap" /> <span>🎁 Gift wrap with a handwritten note <b id="giftPrice"></b></span></label>
+    <p class="eta" id="eta"></p>
+  </div>
+  <div class="cart-foot" id="cartFoot">
+    <div class="row"><span>Toys</span><span id="cSub">₹0</span></div>
+    <div class="row" id="cExtraRow" hidden><span>Ribbons &amp; gift wrap</span><span id="cExtra">₹0</span></div>
+    <div class="row"><span>Shipping</span><span id="cShip">₹0</span></div>
+    <div class="row total"><span>Total</span><span id="cTotal">₹0</span></div>
+    <button class="btn btn-pink btn-full" id="checkout">Checkout on WhatsApp →</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
