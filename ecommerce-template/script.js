@@ -13,9 +13,9 @@ const PRODUCTS = [
   { id: 2,  name: "Nordline Studio Headphones", cat: "audio",     price: 3999,  was: 5999,  rating: 4.8, reviews: 528, tag: "hot",  img: img("photo-1505740420928-5e560c06d30e"), desc: "Active noise cancellation, 40-hour battery and plush memory-foam ear cushions." },
   { id: 3,  name: "Kairo Runner Red",         cat: "sneakers",    price: 4299,  was: null,  rating: 4.7, reviews: 204, tag: "new",  img: img("photo-1542291026-7eec264c27ff"), desc: "Lightweight knit upper with responsive foam sole. Built for everyday comfort.", sizes: ["UK 6","UK 7","UK 8","UK 9","UK 10"] },
   { id: 4,  name: "Velour Leather Backpack",  cat: "accessories", price: 2899,  was: 3999,  rating: 4.8, reviews: 167, tag: "sale", img: img("photo-1553062407-98eeb64c6a62"), desc: "Full-grain vegan leather, padded 15\" laptop sleeve and water-resistant lining." },
-  { id: 5,  name: "Monolith Smart Watch",     cat: "watches",     price: 4999,  was: 8999,  rating: 4.6, reviews: 441, tag: "sale", img: img("photo-1546868871-7041f2a55e12"), desc: "AMOLED display, 14-day battery, heart-rate and SpO2 tracking." },
+  { id: 5,  name: "Monolith Smart Watch",     cat: "watches",     price: 4999,  was: 8999,  rating: 4.6, reviews: 441, tag: "sale", img: "images/smart-watch.jpg", desc: "AMOLED display, 14-day battery, heart-rate and SpO2 tracking." },
   { id: 6,  name: "Osteria Aviator Shades",   cat: "accessories", price: 1499,  was: 2199,  rating: 4.5, reviews: 98,  tag: null,   img: img("photo-1572635196237-14b3f281503f"), desc: "Polarised UV400 lenses with a featherweight metal frame." },
-  { id: 7,  name: "Kairo Street White",       cat: "sneakers",    price: 3799,  was: null,  rating: 4.8, reviews: 276, tag: "new",  img: img("photo-1600185365483-26d7a4cc7519"), desc: "Minimal leather sneaker that goes with everything. Cushioned insole.", sizes: ["UK 6","UK 7","UK 8","UK 9","UK 10"] },
+  { id: 7,  name: "Kairo Street White",       cat: "sneakers",    price: 3799,  was: null,  rating: 4.8, reviews: 276, tag: "new",  img: "images/white-sneakers.jpg", desc: "Minimal leather sneaker that goes with everything. Cushioned insole.", sizes: ["UK 6","UK 7","UK 8","UK 9","UK 10"] },
   { id: 8,  name: "Nordline Buds Air",        cat: "audio",       price: 2499,  was: 3499,  rating: 4.6, reviews: 389, tag: "hot",  img: img("photo-1590658268037-6bf12165a8df"), desc: "True wireless earbuds with ENC mics, low-latency gaming mode and 30-hour case." },
   { id: 9,  name: "Aurelia Minimal Gold",     cat: "watches",     price: 5499,  was: null,  rating: 4.9, reviews: 156, tag: "new",  img: img("photo-1524805444758-089113d48a6d"), desc: "Ultra-slim 7mm case with a sunray dial and genuine leather strap." },
   { id: 10, name: "Velour Card Wallet",       cat: "accessories", price: 899,   was: 1299,  rating: 4.7, reviews: 214, tag: null,   img: img("photo-1627123424574-724758594e93"), desc: "RFID-blocking slim wallet with quick-access card slot." },
@@ -23,7 +23,7 @@ const PRODUCTS = [
   { id: 12, name: "Nordline Boom Speaker",     cat: "audio",      price: 3299,  was: 4499,  rating: 4.5, reviews: 187, tag: null,   img: img("photo-1608043152269-423dbba4e7e1"), desc: "360° sound, IPX7 waterproof and 20 hours of playtime." },
 ];
 
-const DEAL_PRODUCT = { id: 99, name: "Aurelia Smart Watch Pro", cat: "watches", price: 4999, was: 8999, img: img("photo-1546868871-7041f2a55e12") };
+const DEAL_PRODUCT = { id: 99, name: "Aurelia Smart Watch Pro", cat: "watches", price: 4999, was: 8999, img: "images/smart-watch.jpg" };
 
 /* ---------- Helpers ---------- */
 const $ = (s, el = document) => el.querySelector(s);
@@ -222,7 +222,7 @@ function toggleWish(id) {
 function openQuickView(id) {
   const p = findProduct(id);
   $("#modalContent").innerHTML = `
-    <div class="m-img"><img src="${p.img.replace("w=700", "w=1000")}" alt="${p.name}" data-fallback="${p.name}" /></div>
+    <div class="m-img"><img src="${p.img}" alt="${p.name}" data-fallback="${p.name}" /></div>
     <div class="m-info">
       <span class="eyebrow">${p.cat}</span>
       <h2>${p.name}</h2>

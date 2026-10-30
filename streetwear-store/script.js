@@ -9,21 +9,23 @@ const CONFIG = {
   coupons: { VOID15: 0.15, FIRST10: 0.10 },
 };
 
-const u = (id, w = 700) => `https://images.unsplash.com/${id}?w=${w}&q=80`;
+// Product photos live in the images/ folder, so they load even without internet.
+// Swap in your own photos by replacing the files (or changing these paths).
+const img = (file) => `images/${file}`;
 
 const PRODUCTS = [
-  { id: 1,  name: "Void Oversized Tee",       cat: "T-Shirts", price: 899,  was: 1299, pop: 98, isNew: true,  stock: "in",  sizes: ["S","M","L","XL","XXL"], colors: ["#111","#f2f2f2","#6b6b5a"], img: u("photo-1521572163474-6864f9cf17ab"), desc: "240 GSM heavyweight cotton, drop shoulder, boxy fit. Puff-printed back graphic." },
-  { id: 2,  name: "Eclipse Heavy Hoodie",     cat: "Hoodies",  price: 2199, was: 2999, pop: 95, isNew: true,  stock: "low", sizes: ["S","M","L","XL"],       colors: ["#111","#3b3f46"],           img: u("photo-1556821840-3a63f95609a7"), desc: "420 GSM brushed fleece, double-layered hood and a kangaroo pocket. Built for winter." },
-  { id: 3,  name: "Utility Cargo Pants",      cat: "Bottoms",  price: 1799, was: null, pop: 88, isNew: false, stock: "in",  sizes: ["28","30","32","34","36"], colors: ["#2f3326","#111"],          img: u("photo-1542272604-787c3835535d"), desc: "Relaxed straight leg, 6 utility pockets and adjustable ankle toggles." },
-  { id: 4,  name: "Night Bomber Jacket",      cat: "Jackets",  price: 3499, was: 4499, pop: 80, isNew: true,  stock: "in",  sizes: ["M","L","XL"],           colors: ["#111","#4a3b2a"],           img: u("photo-1551028719-00167b16eac5"), desc: "Water-resistant shell, quilted lining and ribbed cuffs. Embroidered sleeve logo." },
-  { id: 5,  name: "Static Graphic Tee",       cat: "T-Shirts", price: 999,  was: null, pop: 91, isNew: false, stock: "in",  sizes: ["S","M","L","XL"],       colors: ["#f2f2f2","#111"],           img: u("photo-1503341504253-dff4815485f1"), desc: "Oversized tee with a screen-printed front graphic and a ribbed neck." },
-  { id: 6,  name: "Void Runner Sneakers",     cat: "Footwear", price: 3299, was: 3999, pop: 86, isNew: false, stock: "low", sizes: ["7","8","9","10","11"],  colors: ["#f2f2f2","#111"],           img: u("photo-1549298916-b41d501d3772"), desc: "Chunky sole, suede overlays and a cushioned footbed. UK sizing." },
-  { id: 7,  name: "Logo Dad Cap",             cat: "Accessories", price: 599, was: 799, pop: 75, isNew: false, stock: "in", sizes: ["FREE"],               colors: ["#111","#c6ff3d"],           img: u("photo-1588850561407-ed78c282e89b"), desc: "Washed cotton twill, embroidered logo and an adjustable metal buckle." },
-  { id: 8,  name: "Washed Black Tee",         cat: "T-Shirts", price: 849,  was: 1099, pop: 84, isNew: false, stock: "in",  sizes: ["S","M","L","XL","XXL"], colors: ["#2a2a2a"],                  img: u("photo-1576566588028-4147f3842f27"), desc: "Acid-washed for a vintage look. Every piece is slightly unique." },
-  { id: 9,  name: "Zip-Up Track Hoodie",      cat: "Hoodies",  price: 2499, was: null, pop: 70, isNew: true,  stock: "out", sizes: ["S","M","L","XL"],       colors: ["#3b3f46","#111"],           img: u("photo-1578587018452-892bacefd3f2"), desc: "Full-zip hoodie with contrast taping and metal hardware." },
-  { id: 10, name: "Wide Leg Denim",           cat: "Bottoms",  price: 1999, was: 2599, pop: 82, isNew: false, stock: "in",  sizes: ["28","30","32","34"],   colors: ["#1f2a3a","#111"],           img: u("photo-1541099649105-f69ad21f3246"), desc: "Rigid 13oz denim, baggy wide leg and a raw hem." },
-  { id: 11, name: "Canvas Tote Bag",          cat: "Accessories", price: 699, was: null, pop: 66, isNew: false, stock: "in", sizes: ["FREE"],               colors: ["#e8e2d2","#111"],           img: u("photo-1590874103328-eac38a683ce7"), desc: "Heavy canvas with an inner zip pocket. Fits a 14\" laptop." },
-  { id: 12, name: "Coach Windbreaker",        cat: "Jackets",  price: 2799, was: 3299, pop: 78, isNew: false, stock: "in",  sizes: ["M","L","XL"],           colors: ["#111","#c6ff3d"],           img: u("photo-1544022613-e87ca75a784a"), desc: "Lightweight nylon with snap buttons and a back yoke print." },
+  { id: 1,  name: "Void Oversized Tee",       cat: "T-Shirts", price: 899,  was: 1299, pop: 98, isNew: true,  stock: "in",  sizes: ["S","M","L","XL","XXL"], colors: ["#111","#f2f2f2","#6b6b5a"], img: img("oversized-tee.jpg"),   desc: "240 GSM heavyweight cotton, drop shoulder, boxy fit. Puff-printed back graphic." },
+  { id: 2,  name: "Eclipse Zip Hoodie",       cat: "Hoodies",  price: 2199, was: 2999, pop: 95, isNew: true,  stock: "low", sizes: ["S","M","L","XL"],       colors: ["#1f2a4a","#111"],           img: img("zip-hoodie.jpg"),      desc: "420 GSM brushed fleece, double-layered hood and a full metal zip. Built for winter." },
+  { id: 3,  name: "Utility Wide Pants",       cat: "Bottoms",  price: 1799, was: null, pop: 88, isNew: false, stock: "in",  sizes: ["28","30","32","34","36"], colors: ["#111","#2f3326"],          img: img("wide-pants.jpg"),      desc: "Relaxed wide leg in heavy twill, with deep pockets and an easy drawstring waist." },
+  { id: 4,  name: "Night Leather Jacket",     cat: "Jackets",  price: 3499, was: 4499, pop: 80, isNew: true,  stock: "in",  sizes: ["M","L","XL"],           colors: ["#5a3420","#111"],           img: img("leather-jacket.jpg"),  desc: "Soft vegan leather, quilted lining and zip cuffs. Gets better with every wear." },
+  { id: 5,  name: "Static Red Tee",           cat: "T-Shirts", price: 999,  was: null, pop: 91, isNew: false, stock: "in",  sizes: ["S","M","L","XL"],       colors: ["#c8262b","#111"],           img: img("red-tee.jpg"),         desc: "Oversized tee in a loud garment-dyed red with a ribbed neck." },
+  { id: 6,  name: "Void Court Sneakers",      cat: "Footwear", price: 3299, was: 3999, pop: 86, isNew: false, stock: "low", sizes: ["7","8","9","10","11"],  colors: ["#f2f2f2"],                  img: img("court-sneakers.jpg"),  desc: "Clean white leather low-tops with a cushioned footbed. UK sizing." },
+  { id: 7,  name: "Logo Beanie",              cat: "Accessories", price: 599, was: 799, pop: 75, isNew: false, stock: "in", sizes: ["FREE"],               colors: ["#111","#c6ff3d"],           img: img("beanie.jpg"),          desc: "Chunky rib-knit beanie with a woven logo label. One size fits all." },
+  { id: 8,  name: "Washed Black Tee",         cat: "T-Shirts", price: 849,  was: 1099, pop: 84, isNew: false, stock: "in",  sizes: ["S","M","L","XL","XXL"], colors: ["#2a2a2a"],                  img: img("black-tee.jpg"),       desc: "Acid-washed for a vintage look. Every piece is slightly unique." },
+  { id: 9,  name: "Forest Knit Crewneck",     cat: "Hoodies",  price: 2499, was: null, pop: 70, isNew: true,  stock: "out", sizes: ["S","M","L","XL"],       colors: ["#1f4a35"],                  img: img("forest-crewneck.jpg"), desc: "Soft brushed knit crewneck in deep forest green with ribbed trims." },
+  { id: 10, name: "Classic Blue Denim",       cat: "Bottoms",  price: 1999, was: 2599, pop: 82, isNew: false, stock: "in",  sizes: ["28","30","32","34"],   colors: ["#1f2a3a"],                  img: img("blue-denim.jpg"),      desc: "13oz stretch denim with a relaxed straight leg and a rolled hem." },
+  { id: 11, name: "Rose Knit Crewneck",       cat: "Hoodies",  price: 2299, was: 2799, pop: 66, isNew: false, stock: "in",  sizes: ["S","M","L","XL"],       colors: ["#e58aa8"],                  img: img("rose-crewneck.jpg"),   desc: "Relaxed-fit crewneck in a soft rose knit. Unisex sizing." },
+  { id: 12, name: "Ember Knit Crewneck",      cat: "Hoodies",  price: 2299, was: null, pop: 78, isNew: false, stock: "in",  sizes: ["S","M","L","XL"],       colors: ["#e8571f"],                  img: img("ember-crewneck.jpg"),  desc: "Bold orange knit crewneck that stands out in any crowd." },
 ];
 
 /* ---------- Helpers ---------- */
@@ -140,7 +142,7 @@ function openProduct(id) {
   const soldOut = p.stock === "out";
 
   $("#modalBody").innerHTML = `
-    <div class="m-media"><img src="${p.img.replace("w=700", "w=1100")}" alt="${p.name}" data-ph="${p.name}" /></div>
+    <div class="m-media"><img src="${p.img}" alt="${p.name}" data-ph="${p.name}" /></div>
     <div class="m-info">
       <p class="kicker">${p.cat.toUpperCase()} ${p.isNew ? "· NEW DROP" : ""}</p>
       <h3>${p.name.toUpperCase()}</h3>

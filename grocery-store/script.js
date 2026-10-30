@@ -27,9 +27,9 @@ const CATEGORIES = [
 
 // Each product can have several pack sizes (variants) with their own price and MRP
 const PRODUCTS = [
-  { id: 1,  name: "Fresh Bananas (Robusta)", img: u("photo-1571771894821-ce9b6c11b08e"),  cat: "Fruits",     emoji: "🍌", best: true, v: [["6 pcs", 42, 55], ["12 pcs", 79, 110]] },
+  { id: 1,  name: "Fresh Bananas (Robusta)", img: u("images/bananas.jpg"),  cat: "Fruits",     emoji: "🍌", best: true, v: [["6 pcs", 42, 55], ["12 pcs", 79, 110]] },
   { id: 2,  name: "Shimla Apples", img: u("photo-1560806887-1e4cd0b6cbd6"),            cat: "Fruits",     emoji: "🍎", best: true, v: [["4 pcs", 129, 160], ["1 kg", 219, 280]] },
-  { id: 3,  name: "Alphonso Mangoes", img: u("photo-1553279768-865429fa0078"),         cat: "Fruits",     emoji: "🥭", v: [["2 pcs", 149, 199], ["6 pcs", 399, 540]] },
+  { id: 3,  name: "Alphonso Mangoes", img: u("images/mangoes.jpg"),         cat: "Fruits",     emoji: "🥭", v: [["2 pcs", 149, 199], ["6 pcs", 399, 540]] },
   { id: 4,  name: "Hass Avocado", img: u("photo-1523049673857-eb18f1d7b578"),             cat: "Fruits",     emoji: "🥑", v: [["1 pc", 129, 169]] },
   { id: 5,  name: "Desi Tomatoes", img: u("photo-1546094096-0df4bcaaa337"),            cat: "Vegetables", emoji: "🍅", best: true, v: [["500 g", 24, 35], ["1 kg", 45, 68]] },
   { id: 6,  name: "Onions", img: u("photo-1618512496248-a07fe83aa8cb"),                   cat: "Vegetables", emoji: "🧅", best: true, v: [["1 kg", 39, 52], ["2 kg", 75, 104]] },
@@ -45,7 +45,7 @@ const PRODUCTS = [
   { id: 16, name: "Butter Popcorn", img: u("photo-1578849278619-e73505e9610f"),           cat: "Snacks",     emoji: "🍿", v: [["90 g", 49, 60]] },
   { id: 17, name: "Choco Chip Cookies", img: u("photo-1499636136210-6f4ee915583e"),       cat: "Snacks",     emoji: "🍪", best: true, v: [["200 g", 75, 90]] },
   { id: 18, name: "Mixed Fruit Juice", img: u("photo-1600271886742-f049cd451bba"),        cat: "Beverages",  emoji: "🧃", v: [["1 L", 99, 125]] },
-  { id: 19, name: "Tender Coconut Water", img: u("photo-1525385133512-2f3bdd039054"),     cat: "Beverages",  emoji: "🥥", v: [["1 pc", 55, 70]] },
+  { id: 19, name: "Tender Coconut Water", img: u("images/coconut.jpg"),     cat: "Beverages",  emoji: "🥥", v: [["1 pc", 55, 70]] },
   { id: 20, name: "Assam Tea", img: u("photo-1564890369478-c89ca6d9cde9"),                cat: "Beverages",  emoji: "🍵", v: [["250 g", 135, 160]] },
   { id: 21, name: "Basmati Rice", img: u("photo-1586201375761-83865001e31c"),             cat: "Staples",    emoji: "🍚", best: true, v: [["1 kg", 129, 175], ["5 kg", 599, 850]] },
   { id: 22, name: "Chakki Atta", img: u("photo-1574323347407-f5e1ad6d020b"),              cat: "Staples",    emoji: "🌾", v: [["5 kg", 249, 310], ["10 kg", 479, 600]] },
