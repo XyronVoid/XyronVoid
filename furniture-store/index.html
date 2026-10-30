@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KONA — Furniture for Every Corner</title>
+<meta name="description" content="KONA — honest, well-made furniture and plants for Indian homes. Check if it fits, pick a finish, pay in easy EMIs and get it delivered up any number of stairs." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="announce"><span>Free delivery over ₹15,000</span><span class="dot"></span><span>No-cost EMI up to 12 months</span><span class="dot"></span><span>100-night trial on sofas</span></div>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a href="#top" class="logo" id="top"><span class="shapes" aria-hidden="true"><i class="c"></i><i class="s"></i><i class="t"></i></span>KONA</a>
+    <nav class="nav" id="nav">
+      <a href="#rooms">Rooms</a>
+      <a href="#shop">Furniture</a>
+      <a href="#plants">Plants</a>
+      <a href="#fit">Will it fit?</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart"><span class="cart-label">Cart</span><b id="cartCount">0</b></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero poster -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="kicker">Furniture · Lighting · Plants</p>
+      <h1>Form.<br /><span class="red">Function.</span><br />Feeling.</h1>
+      <p class="lead">Simple, solid furniture designed in Bengaluru and built to survive moving houses, monsoons and kids. Every piece comes with its exact size, so you know it fits before you buy.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-black">Shop furniture</a>
+        <a href="#fit" class="btn btn-outline">Will it fit?</a>
+      </div>
+    </div>
+    <div class="poster" aria-hidden="true">
+      <div class="p-circle"><img src="images/arc-armchair.jpg" alt="" /></div>
+      <div class="p-square"></div>
+      <div class="p-triangle"></div>
+      <div class="p-bar"></div>
+      <div class="p-half"></div>
+      <div class="p-tag"><b>Arc Lounge Chair</b><span>from ₹18,490</span></div>
+      <span class="p-num">01</span>
+    </div>
+  </div>
+</section>
+
+<!-- Rooms -->
+<section class="sec" id="rooms">
+  <div class="wrap">
+    <div class="head">
+      <h2><span class="num">01</span>Shop by room</h2>
+    </div>
+    <div class="rooms" id="roomList"></div>
+  </div>
+</section>
+
+<!-- Shop -->
+<section class="sec sec-line" id="shop">
+  <div class="wrap">
+    <div class="head">
+      <h2><span class="num">02</span>The collection</h2>
+      <div class="controls">
+        <div class="tabs" id="tabs"></div>
+        <select id="sortSel" class="select" aria-label="Sort">
+          <option value="featured">Featured</option>
+          <option value="low">Price ↑</option>
+          <option value="high">Price ↓</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- Fit -->
+<section class="sec sec-blue" id="fit">
+  <div class="wrap fit">
+    <div>
+      <h2><span class="num">03</span>Will it fit?</h2>
+      <p class="lead">The number one reason furniture comes back is that it didn't fit, or didn't get through the door. So every KONA product page has a fit checker.</p>
+      <ol class="steps">
+        <li><b>Measure the space</b>Width and depth of the spot where it will go.</li>
+        <li><b>Measure the door</b>The narrowest door, lift or stair turn on the way in.</li>
+        <li><b>Check on the product</b>We'll tell you if it fits, with room to spare.</li>
+      </ol>
+    </div>
+    <div class="fit-demo">
+      <div class="fd-room">
+        <span class="fd-label">Your space · 240 × 120 cm</span>
+        <div class="fd-sofa"><span>Sofa · 210 × 90</span></div>
+        <span class="fd-gap">15 cm each side ✓</span>
+      </div>
+      <a href="#shop" class="btn btn-yellow btn-full">Try it on a product →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Plants -->
+<section class="sec" id="plants">
+  <div class="wrap">
+    <div class="head">
+      <h2><span class="num">04</span>Complete the corner</h2>
+      <p class="head-note">Every corner needs something alive. Potted plants, delivered with your furniture at no extra delivery cost.</p>
+    </div>
+    <div class="plants" id="plantList"></div>
+  </div>
+</section>
+
+<!-- Promises -->
+<section class="promises">
+  <div class="wrap promise-grid">
+    <div class="pr pr-red"><b>100</b><span>night trial on every sofa</span></div>
+    <div class="pr pr-yellow"><b>5</b><span>year warranty on frames</span></div>
+    <div class="pr pr-blue"><b>0%</b><span>interest EMI up to 12 months</span></div>
+    <div class="pr pr-black"><b>48h</b><span>assembly after delivery</span></div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><h2><span class="num">05</span>Lived with</h2></div>
+    <div class="reviews">
+      <figure><span class="r-shape c"></span><blockquote>"The fit checker saved me. The first sofa I wanted wouldn't have gone up our stair turn. The grey one did, with 4 cm to spare."</blockquote><figcaption><b>Nikhil T.</b> · Cloud Grey Sofa · Pune</figcaption></figure>
+      <figure><span class="r-shape s"></span><blockquote>"Fourth floor, no lift, and they carried a desk up without a fuss. The stairs charge was shown upfront, no surprises."</blockquote><figcaption><b>Ayesha F.</b> · Oak Writing Desk · Hyderabad</figcaption></figure>
+      <figure><span class="r-shape t"></span><blockquote>"Solid build, honest pricing, and the 12-month EMI made the leather sofa possible for us."</blockquote><figcaption><b>Varun &amp; Megha</b> · Tan Leather Sofa · Chennai</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-line" id="faq">
+  <div class="wrap faq-wrap">
+    <h2><span class="num">06</span>FAQ</h2>
+    <div class="faq">
+      <details open><summary>How does the 100-night sofa trial work?</summary><p>Live with your sofa for up to 100 nights. If you don't love it, we'll pick it up and refund you in full, minus delivery.</p></details>
+      <details><summary>What if I live upstairs without a lift?</summary><p>No problem. Pick your floor in the cart and we show the stairs charge upfront: a small fee per floor for each large item.</p></details>
+      <details><summary>Is assembly included?</summary><p>Assembly is free on orders above ₹25,000. Below that, add it per item in your cart. Our team assembles within 48 hours of delivery.</p></details>
+      <details><summary>How do EMIs work?</summary><p>Pay in 3, 6, 9 or 12 monthly instalments at 0% interest on most credit cards and UPI pay-later apps. Choose a tenure on any product.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a href="#top" class="logo"><span class="shapes" aria-hidden="true"><i class="c"></i><i class="s"></i><i class="t"></i></span>KONA</a>
+      <p>Furniture for every corner. Designed in Bengaluru, delivered across India.</p>
+    </div>
+    <div><h5>Shop</h5><a href="#rooms">Living room</a><a href="#rooms">Dining</a><a href="#rooms">Study</a><a href="#rooms">Bedroom</a></div>
+    <div><h5>Help</h5><a href="#fit">Will it fit?</a><a href="#faq">Delivery &amp; stairs</a><a href="#faq">Sofa trial</a><a href="#faq">EMI</a></div>
+    <div><h5>Visit</h5><a href="#top">Experience centre, Indiranagar</a><a href="#top">hello@kona.in</a><a href="#top">+91 98765 43210</a></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© <span id="year"></span> KONA Furniture</span><span>UPI · Cards · No-cost EMI</span></div>
+</footer>
+
+<!-- Product modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName" hidden>
+  <div class="modal-card">
+    <button class="x" data-close aria-label="Close">✕</button>
+    <div class="m-media"><img id="mImg" src="" alt="" /><span class="m-num" id="mNum"></span></div>
+    <div class="m-body">
+      <p class="kicker" id="mRoom"></p>
+      <h3 id="mName"></h3>
+      <p class="m-desc" id="mDesc"></p>
+      <p class="m-price"><b id="mPrice"></b> <span id="mEmi"></span></p>
+      <div id="mFinishWrap">
+        <h4>Finish · <span id="mFinishName"></span></h4>
+        <div class="swatches" id="mFinishes"></div>
+      </div>
+      <div class="dims" id="mDims"></div>
+
+      <div class="fitbox">
+        <h4>Will it fit?</h4>
+        <div class="fit-fields">
+          <label>Space width<input type="number" id="fW" inputmode="numeric" min="0" placeholder="cm" /></label>
+          <label>Space depth<input type="number" id="fD" inputmode="numeric" min="0" placeholder="cm" /></label>
+          <label>Door width<input type="number" id="fDoor" inputmode="numeric" min="0" placeholder="cm" /></label>
+        </div>
+        <p class="fit-result" id="fitResult">Enter your measurements in cm.</p>
+      </div>
+
+      <div class="emibox">
+        <h4>Pay monthly · <span id="emiMonths"></span></h4>
+        <input type="range" id="emiRange" min="0" max="3" step="1" value="3" aria-label="EMI tenure" />
+        <div class="emi-ticks" id="emiTicks"></div>
+      </div>
+
+      <div id="mPairWrap">
+        <h4>Pair it with a plant</h4>
+        <div class="pairs" id="mPairs"></div>
+      </div>
+      <button class="btn btn-black btn-full" id="mAdd">Add to cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cart -->
+<div class="scrim" id="scrim"></div>
+<aside class="cart" id="cart" aria-label="Your cart">
+  <div class="cart-head"><h3>Cart</h3><button class="x" data-close aria-label="Close cart">✕</button></div>
+  <div class="cart-body">
+    <div id="cartItems"></div>
+    <div class="delivery" id="deliveryBox">
+      <h4>Delivery</h4>
+      <div class="del-row">
+        <label>Floor
+          <select id="floor"></select>
+        </label>
+        <label class="check"><input type="checkbox" id="lift" checked /> Lift available</label>
+      </div>
+      <p class="del-note" id="delNote"></p>
+    </div>
+  </div>
+  <div class="cart-foot" id="cartFoot">
+    <div class="row"><span>Products</span><span id="cSub">₹0</span></div>
+    <div class="row" id="cAsmRow" hidden><span>Assembly</span><span id="cAsm">₹0</span></div>
+    <div class="row"><span>Delivery</span><span id="cShip">₹0</span></div>
+    <div class="row" id="cStairRow" hidden><span>Stairs carry</span><span id="cStair">₹0</span></div>
+    <div class="row total"><span>Total</span><span id="cTotal">₹0</span></div>
+    <p class="emi-line" id="cEmi"></p>
+    <button class="btn btn-red btn-full" id="checkout">Order on WhatsApp</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
