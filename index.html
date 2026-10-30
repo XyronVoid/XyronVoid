@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XyronVoid Live</title>
+<meta name="description" content="Gaming live streams, clips and schedule.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07070d;
+    --bg-2: #0e0e18;
+    --card: #13131f;
+    --line: #23233a;
+    --text: #ecebff;
+    --muted: #9a98b8;
+    --accent: #8b5cf6;
+    --accent-2: #22d3ee;
+    --live: #ff2e55;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+  h1, h2, h3, .logo { font-family: Orbitron, sans-serif; letter-spacing: .02em; }
+
+  /* Nav */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(7,7,13,.8); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .logo { font-weight: 800; font-size: 1.25rem; }
+  .logo span { color: var(--accent); }
+  .links { display: flex; gap: 24px; color: var(--muted); font-size: .95rem; }
+  .links a:hover { color: var(--text); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 10px; font-weight: 700; font-size: .95rem;
+    background: linear-gradient(135deg, var(--accent), #6d28d9); color: #fff;
+    border: 0; cursor: pointer; transition: transform .15s, box-shadow .15s;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,.45); }
+  .btn.ghost { background: transparent; border: 1px solid var(--line); }
+  .btn.red { background: linear-gradient(135deg, #ff2e55, #c0123a); }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 6px 10px; font-size: 1.1rem; }
+
+  /* Hero */
+  .hero { position: relative; padding: 56px 0 40px; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(600px 300px at 15% 10%, rgba(139,92,246,.25), transparent 70%),
+      radial-gradient(500px 300px at 90% 30%, rgba(34,211,238,.15), transparent 70%);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; align-items: start; }
+  .player {
+    position: relative; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--line); background: #000;
+    box-shadow: 0 0 0 1px rgba(139,92,246,.2), 0 20px 60px rgba(0,0,0,.6);
+  }
+  .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .live-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,46,85,.12); color: var(--live);
+    border: 1px solid rgba(255,46,85,.4); border-radius: 999px;
+    padding: 4px 12px; font-size: .8rem; font-weight: 700; letter-spacing: .08em;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); animation: pulse 1.4s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(1.4); } }
+  .stream-info h1 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.2; margin: 14px 0 10px; }
+  .stream-info p { color: var(--muted); margin: 0 0 20px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  /* Chat panel */
+  .chat {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    display: flex; flex-direction: column; height: 100%; min-height: 420px; max-height: 560px;
+  }
+  .chat-head { padding: 14px 16px; border-bottom: 1px solid var(--line); font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+  .chat-head small { color: var(--muted); font-weight: 500; }
+  .chat-log { flex: 1; overflow-y: auto; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; font-size: .9rem; }
+  .msg b { margin-right: 6px; }
+  .msg { animation: fadeIn .3s ease; word-wrap: break-word; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .chat form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); }
+  .chat input {
+    flex: 1; min-width: 0; background: var(--bg-2); border: 1px solid var(--line); color: var(--text);
+    border-radius: 10px; padding: 10px 12px; font: inherit;
+  }
+  .chat input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; text-align: center; }
+  .stat strong { display: block; font-family: Orbitron, sans-serif; font-size: 1.6rem; color: var(--accent-2); }
+  .stat span { color: var(--muted); font-size: .85rem; }
+
+  /* Sections */
+  section { padding: 56px 0; }
+  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .sec-head h2 { margin: 0; font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+  .sec-head p { margin: 4px 0 0; color: var(--muted); }
+
+  /* Schedule */
+  .schedule { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+  .day {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 12px; text-align: center;
+    transition: border-color .2s, transform .2s;
+  }
+  .day:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .day.today { border-color: var(--live); box-shadow: 0 0 24px rgba(255,46,85,.2); }
+  .day h3 { margin: 0 0 6px; font-size: .9rem; color: var(--muted); }
+  .day .time { font-weight: 700; font-size: 1.05rem; }
+  .day .game { color: var(--accent-2); font-size: .85rem; margin-top: 4px; }
+  .day.off .time, .day.off .game { color: var(--muted); }
+
+  /* Videos */
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tab { background: var(--card); border: 1px solid var(--line); color: var(--muted); padding: 8px 14px; border-radius: 999px; cursor: pointer; font: inherit; font-size: .9rem; }
+  .tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .video { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: transform .2s, border-color .2s; }
+  .video:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .thumb { position: relative; aspect-ratio: 16/9; display: grid; place-items: center; font-size: 2.4rem; }
+  .thumb .dur { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,.75); font-size: .75rem; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+  .thumb .play { width: 54px; height: 54px; border-radius: 50%; background: rgba(0,0,0,.55); display: grid; place-items: center; font-size: 1.2rem; transition: transform .2s; }
+  .video:hover .play { transform: scale(1.12); background: var(--live); }
+  .video-body { padding: 14px 16px; }
+  .video-body h3 { font-family: Inter, sans-serif; font-size: 1rem; margin: 0 0 6px; }
+  .video-body small { color: var(--muted); }
+
+  /* Games */
+  .games { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .game-card {
+    position: relative; border-radius: 14px; padding: 22px 18px; min-height: 150px; overflow: hidden;
+    border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .game-card .icon { font-size: 2.2rem; position: absolute; top: 16px; left: 18px; }
+  .game-card h3 { margin: 0; font-size: 1.05rem; }
+  .game-card small { color: rgba(255,255,255,.75); }
+
+  /* Community */
+  .community {
+    background: linear-gradient(135deg, rgba(139,92,246,.18), rgba(34,211,238,.1));
+    border: 1px solid var(--line); border-radius: 20px; padding: 40px 32px;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center;
+  }
+  .community h2 { margin: 0 0 10px; }
+  .community p { color: var(--muted); margin: 0 0 20px; }
+  .socials { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .social { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: flex; align-items: center; gap: 12px; transition: border-color .2s; }
+  .social:hover { border-color: var(--accent); }
+  .social .ico { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; font-weight: 800; flex-shrink: 0; }
+  .social small { display: block; color: var(--muted); font-size: .8rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .9rem; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .chat { max-height: 380px; min-height: 340px; }
+    .schedule { grid-template-columns: repeat(4, 1fr); }
+    .videos { grid-template-columns: repeat(2, 1fr); }
+    .games { grid-template-columns: repeat(2, 1fr); }
+    .community { grid-template-columns: 1fr; padding: 28px 20px; }
+  }
+  @media (max-width: 700px) {
+    .links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+    .links.open { display: flex; }
+    .links a { padding: 14px 16px; border-top: 1px solid var(--line); }
+    .menu-btn { display: block; }
+    nav .btn { display: none; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .schedule { grid-template-columns: repeat(2, 1fr); }
+    .videos { grid-template-columns: 1fr; }
+    .socials { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo" id="logo">XYRON<span>VOID</span></a>
+    <div class="links" id="links">
+      <a href="#live">Live</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#videos">Videos</a>
+      <a href="#games">Games</a>
+      <a href="#community">Community</a>
+    </div>
+    <a class="btn red" id="subBtnNav" target="_blank" rel="noopener">▶ Subscribe</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Live -->
+  <section class="hero" id="live">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="player">
+            <iframe id="player" title="Live stream" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="stream-info">
+            <h1 id="streamTitle">Late Night Grind — Ranked Push 🔥</h1>
+            <p id="streamDesc">Roz raat live gameplay, ranked matches, viewers ke saath custom rooms aur full masti. Chat mein aao, saath khelo!</p>
+            <div class="actions">
+              <a class="btn red" id="subBtn" target="_blank" rel="noopener">▶ Subscribe on YouTube</a>
+              <a class="btn ghost" id="watchBtn" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="chat" aria-label="Live chat">
+          <div class="chat-head">
+            <span class="live-badge"><span class="dot"></span>LIVE CHAT</span>
+            <small><span id="viewers">1,248</span> watching</small>
+          </div>
+          <div class="chat-log" id="chatLog"></div>
+          <form id="chatForm">
+            <input id="chatInput" placeholder="Say something…" maxlength="120" autocomplete="off">
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </aside>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong data-count="52000">0</strong><span>Subscribers</span></div>
+        <div class="stat"><strong data-count="640">0</strong><span>Live Streams</span></div>
+        <div class="stat"><strong data-count="3200000">0</strong><span>Total Views</span></div>
+        <div class="stat"><strong data-count="1800">0</strong><span>Hours Streamed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>Stream Schedule</h2>
+          <p>All times IST · Notification on rakho 🔔</p>
+        </div>
+      </div>
+      <div class="schedule" id="scheduleGrid"></div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>Latest Videos</h2>
+          <p>Past streams, highlights aur best clips</p>
+        </div>
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="stream">Streams</button>
+          <button class="tab" data-filter="highlight">Highlights</button>
+          <button class="tab" data-filter="short">Shorts</button>
+        </div>
+      </div>
+      <div class="videos" id="videoGrid"></div>
+    </div>
+  </section>
+
+  <!-- Games -->
+  <section id="games">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>Games We Play</h2>
+          <p>Jo game chahiye, chat mein request karo</p>
+        </div>
+      </div>
+      <div class="games" id="gameGrid"></div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community">
+    <div class="wrap">
+      <div class="community">
+        <div>
+          <h2>Join the Squad</h2>
+          <p>Custom rooms, giveaways aur behind-the-scenes updates. Discord join karo aur stream ke baad bhi saath khelo.</p>
+          <a class="btn" href="#" id="discordBtn">Join Discord</a>
+        </div>
+        <div class="socials" id="socials"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> <span id="footName">XyronVoid</span>. All rights reserved.</span>
+    <span>Made for gamers 🎮</span>
+  </div>
+</footer>
+
+<script>
+  // ===== Edit this block to customise the site =====
+  const CONFIG = {
+    channelName: "XyronVoid",
+    channelUrl: "https://www.youtube.com/",          // channel link daalo, e.g. https://www.youtube.com/@yourhandle
+    liveVideoId: "09v6H59HKUA",                        // live stream / video ID
+    schedule: [
+      { day: "Mon", time: "9:00 PM", game: "BGMI" },
+      { day: "Tue", time: "9:00 PM", game: "Valorant" },
+      { day: "Wed", time: "—", game: "Off day", off: true },
+      { day: "Thu", time: "9:00 PM", game: "Free Fire" },
+      { day: "Fri", time: "10:00 PM", game: "GTA V RP" },
+      { day: "Sat", time: "8:00 PM", game: "Customs" },
+      { day: "Sun", time: "7:00 PM", game: "Minecraft" }
+    ],
+    videos: [
+      { title: "Solo vs Squad — 18 Kill Chicken Dinner", type: "highlight", meta: "120K views · 2 days ago", dur: "14:32", emoji: "🏆", grad: ["#7c3aed", "#db2777"] },
+      { title: "Full Stream: Ranked Push to Conqueror", type: "stream", meta: "48K views · 3 days ago", dur: "4:12:09", emoji: "🔴", grad: ["#0ea5e9", "#6366f1"] },
+      { title: "Ye clutch kaise hua?? 😱", type: "short", meta: "890K views · 5 days ago", dur: "0:42", emoji: "⚡", grad: ["#f59e0b", "#ef4444"] },
+      { title: "GTA V RP — Police chase gone wrong", type: "highlight", meta: "76K views · 1 week ago", dur: "18:05", emoji: "🚓", grad: ["#10b981", "#0891b2"] },
+      { title: "Full Stream: Viewers Custom Rooms", type: "stream", meta: "32K views · 1 week ago", dur: "3:40:51", emoji: "🎮", grad: ["#8b5cf6", "#22d3ee"] },
+      { title: "Last zone 1v4 😤", type: "short", meta: "1.2M views · 2 weeks ago", dur: "0:31", emoji: "🔥", grad: ["#e11d48", "#7c3aed"] }
+    ],
+    games: [
+      { name: "BGMI", note: "Battle royale", emoji: "🪂", grad: ["#f59e0b", "#b45309"] },
+      { name: "Valorant", note: "Tactical shooter", emoji: "🎯", grad: ["#ef4444", "#7f1d1d"] },
+      { name: "GTA V RP", note: "Roleplay", emoji: "🚗", grad: ["#10b981", "#065f46"] },
+      { name: "Minecraft", note: "Survival builds", emoji: "⛏️", grad: ["#22c55e", "#3f6212"] }
+    ],
+    socials: [
+      { name: "YouTube", handle: "Subscribe", color: "#ff2e55", letter: "▶", url: "https://www.youtube.com/" },
+      { name: "Instagram", handle: "@xyronvoid", color: "#e1306c", letter: "IG", url: "#" },
+      { name: "Discord", handle: "Join server", color: "#5865f2", letter: "D", url: "#" },
+      { name: "X / Twitter", handle: "@xyronvoid", color: "#1d9bf0", letter: "X", url: "#" }
+    ]
+  };
+  // ==================================================
+
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  // Branding + links
+  const [a, b] = [CONFIG.channelName.slice(0, Math.ceil(CONFIG.channelName.length / 2)), CONFIG.channelName.slice(Math.ceil(CONFIG.channelName.length / 2))];
+  $("#logo").innerHTML = esc(a.toUpperCase()) + "<span>" + esc(b.toUpperCase()) + "</span>";
+  $("#footName").textContent = CONFIG.channelName;
+  $("#year").textContent = new Date().getFullYear();
+  document.title = CONFIG.channelName + " Live";
+  const subUrl = CONFIG.channelUrl + (CONFIG.channelUrl.includes("@") ? "?sub_confirmation=1" : "");
+  $("#subBtn").href = subUrl;
+  $("#subBtnNav").href = subUrl;
+  $("#watchBtn").href = "https://www.youtube.com/watch?v=" + CONFIG.liveVideoId;
+  $("#player").src = "https://www.youtube.com/embed/" + CONFIG.liveVideoId + "?rel=0";
+
+  // Mobile menu
+  $("#menuBtn").onclick = () => $("#links").classList.toggle("open");
+  document.querySelectorAll("#links a").forEach((l) => (l.onclick = () => $("#links").classList.remove("open")));
+
+  // Schedule (highlight today)
+  const today = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][new Date().getDay()];
+  $("#scheduleGrid").innerHTML = CONFIG.schedule.map((d) => `
+    <div class="day ${d.off ? "off" : ""} ${d.day === today ? "today" : ""}">
+      <h3>${esc(d.day)}${d.day === today ? " · Today" : ""}</h3>
+      <div class="time">${esc(d.time)}</div>
+      <div class="game">${esc(d.game)}</div>
+    </div>`).join("");
+
+  // Videos + filter tabs
+  function renderVideos(filter) {
+    $("#videoGrid").innerHTML = CONFIG.videos
+      .filter((v) => filter === "all" || v.type === filter)
+      .map((v) => `
+        <a class="video" href="${esc(CONFIG.channelUrl)}" target="_blank" rel="noopener">
+          <div class="thumb" style="background:linear-gradient(135deg,${v.grad[0]},${v.grad[1]})">
+            <span aria-hidden="true" style="position:absolute;top:10px;left:12px;font-size:1.6rem">${v.emoji}</span>
+            <div class="play" style="position:absolute">▶</div>
+            <span class="dur">${esc(v.dur)}</span>
+          </div>
+          <div class="video-body">
+            <h3>${esc(v.title)}</h3>
+            <small>${esc(v.meta)}</small>
+          </div>
+        </a>`).join("");
+  }
+  renderVideos("all");
+  document.querySelectorAll(".tab").forEach((t) => (t.onclick = () => {
+    document.querySelectorAll(".tab").forEach((x) => x.classList.remove("active"));
+    t.classList.add("active");
+    renderVideos(t.dataset.filter);
+  }));
+
+  // Games
+  $("#gameGrid").innerHTML = CONFIG.games.map((g) => `
+    <div class="game-card" style="background:linear-gradient(160deg,${g.grad[0]},${g.grad[1]})">
+      <span class="icon">${g.emoji}</span>
+      <h3>${esc(g.name)}</h3>
+      <small>${esc(g.note)}</small>
+    </div>`).join("");
+
+  // Socials
+  $("#socials").innerHTML = CONFIG.socials.map((s) => `
+    <a class="social" href="${esc(s.url)}" target="_blank" rel="noopener">
+      <span class="ico" style="background:${s.color}">${esc(s.letter)}</span>
+      <span><b>${esc(s.name)}</b><small>${esc(s.handle)}</small></span>
+    </a>`).join("");
+  $("#discordBtn").href = CONFIG.socials.find((s) => s.name === "Discord")?.url || "#";
+
+  // Animated counters
+  const fmt = (n) => n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n);
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.count, start = performance.now();
+    const tick = (t) => {
+      const p = Math.min((t - start) / 1400, 1);
+      el.textContent = fmt(Math.floor(target * (1 - Math.pow(1 - p, 3)))) + (p === 1 ? "+" : "");
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    io.unobserve(el);
+  }));
+  document.querySelectorAll("[data-count]").forEach((el) => io.observe(el));
+
+  // Demo live chat (simulated)
+  const users = [["Rohit_FF", "#22d3ee"], ["GamerGirl07", "#f472b6"], ["ProSniperX", "#a3e635"], ["Ankit_YT", "#fbbf24"], ["NoobMaster", "#a78bfa"], ["DesiClutch", "#fb7185"]];
+  const lines = ["bhai op gameplay 🔥", "next match custom room?", "GG WP 👏", "headshot machine 😱", "kab se live ho bro?", "hello from Delhi 👋", "drop kahan karoge?", "1v4 clutch karo 💪", "subscribed ✅", "ye stream mast hai"];
+  const log = $("#chatLog");
+  function addMsg(name, color, text) {
+    const d = document.createElement("div");
+    d.className = "msg";
+    d.innerHTML = `<b style="color:${color}">${esc(name)}</b>${esc(text)}`;
+    log.appendChild(d);
+    while (log.children.length > 60) log.firstChild.remove();
+    log.scrollTop = log.scrollHeight;
+  }
+  const rand = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  for (let i = 0; i < 6; i++) { const u = rand(users); addMsg(u[0], u[1], rand(lines)); }
+  setInterval(() => { const u = rand(users); addMsg(u[0], u[1], rand(lines)); }, 2600);
+  $("#chatForm").onsubmit = (e) => {
+    e.preventDefault();
+    const v = $("#chatInput").value.trim();
+    if (v) { addMsg("You", "#8b5cf6", v); $("#chatInput").value = ""; }
+  };
+  let viewers = 1248;
+  setInterval(() => {
+    viewers = Math.max(900, viewers + Math.floor(Math.random() * 41) - 18);
+    $("#viewers").textContent = viewers.toLocaleString("en-IN");
+  }, 3000);
+</script>
+</body>
+</html>
