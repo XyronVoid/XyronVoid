@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOIDWEAR — Streetwear Store</title>
+  <meta name="description" content="VOIDWEAR — oversized tees, hoodies, cargos and sneakers. Limited drops, shipped across India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <span>FREE SHIPPING ABOVE ₹999</span>
+    <span class="hide-sm">·</span>
+    <span class="hide-sm">CODE <b>VOID15</b> = 15% OFF</span>
+    <span class="hide-sm">·</span>
+    <span class="hide-sm">COD AVAILABLE</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="wrap header-in">
+      <a href="#" class="logo">VOID<span>WEAR</span></a>
+      <nav class="nav">
+        <a href="#drops">New Drops</a>
+        <a href="#shop">Shop</a>
+        <a href="#lookbook">Lookbook</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="actions">
+        <button class="ibtn" id="openSearch" aria-label="Search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="ibtn" id="openWish" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.3 3.4 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.7 1.2-1.6 2.8-2.7 4.8-2.7 3.8 0 6.2 3.8 4.7 7.3C19.5 16.4 12 21 12 21z"/></svg>
+          <i class="count" id="wishCount">0</i>
+        </button>
+        <button class="ibtn cart-pill" id="openCart" aria-label="Cart">
+          <svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 12.5H6.2L5 7z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+          <span class="hide-sm">CART</span> <i class="count" id="cartCount">0</i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker"><span class="live"></span> DROP 07 IS LIVE</p>
+        <h1>WEAR<br/>THE <span class="outline">VOID</span></h1>
+        <p class="lead">Oversized fits, heavyweight cotton and limited runs. Once a drop sells out, it's gone for good.</p>
+        <div class="hero-btns">
+          <a href="#shop" class="btn btn-lime">SHOP THE DROP <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#lookbook" class="btn btn-line">LOOKBOOK</a>
+        </div>
+        <div class="next-drop">
+          <span>NEXT DROP IN</span>
+          <div class="timer" id="dropTimer">
+            <div><b id="tD">00</b><small>D</small></div>
+            <div><b id="tH">00</b><small>H</small></div>
+            <div><b id="tM">00</b><small>M</small></div>
+            <div><b id="tS">00</b><small>S</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hm hm-1"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80" alt="Model in streetwear" data-ph="DROP 07" /></div>
+        <div class="hm hm-2"><img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" alt="Black hoodie" data-ph="HOODIES" /></div>
+        <div class="sticker">LIMITED<br/>EDITION</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>OVERSIZED TEES ✺ HOODIES ✺ CARGOS ✺ SNEAKERS ✺ CAPS ✺ LIMITED DROPS ✺ </span>
+      <span>OVERSIZED TEES ✺ HOODIES ✺ CARGOS ✺ SNEAKERS ✺ CAPS ✺ LIMITED DROPS ✺ </span>
+    </div>
+  </div>
+
+  <!-- New drops carousel -->
+  <section class="block" id="drops">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>NEW <span class="lime">DROPS</span></h2>
+        <div class="arrows">
+          <button class="ibtn sq" id="prevDrop" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="ibtn sq" id="nextDrop" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="rail" id="dropRail"></div>
+    </div>
+  </section>
+
+  <!-- Shop with filters -->
+  <section class="block block-dark" id="shop">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>SHOP <span class="lime">ALL</span></h2>
+        <div class="shop-bar">
+          <button class="btn btn-line btn-sm filter-toggle" id="filterToggle">FILTERS</button>
+          <select id="sort" class="select" aria-label="Sort">
+            <option value="new">Newest</option>
+            <option value="low">Price ↑</option>
+            <option value="high">Price ↓</option>
+            <option value="pop">Most Popular</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="shop">
+        <aside class="filters" id="filters">
+          <div class="f-group">
+            <h4>CATEGORY</h4>
+            <div class="f-cats" id="fCats"></div>
+          </div>
+          <div class="f-group">
+            <h4>MAX PRICE <span id="priceOut">₹5,000</span></h4>
+            <input type="range" id="price" min="500" max="5000" step="100" value="5000" />
+          </div>
+          <div class="f-group">
+            <h4>SIZE</h4>
+            <div class="f-sizes" id="fSizes"></div>
+          </div>
+          <button class="btn btn-line btn-sm btn-full" id="clearFilters">CLEAR ALL</button>
+        </aside>
+        <div>
+          <p class="result-count" id="resultCount"></p>
+          <div class="grid" id="grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lookbook -->
+  <section class="block" id="lookbook">
+    <div class="wrap look">
+      <div class="look-img look-a"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&q=80" alt="Lookbook look 1" data-ph="LOOK 01" /><span>LOOK 01</span></div>
+      <div class="look-copy">
+        <p class="kicker">LOOKBOOK / SS26</p>
+        <h2>BUILT FOR THE <span class="lime">STREETS.</span><br/>MADE TO LAST.</h2>
+        <p>240 GSM combed cotton, double-stitched seams and garment-dyed colours that fade beautifully over time. Every piece is designed in India and produced in small batches.</p>
+        <ul class="specs">
+          <li><b>240</b><span>GSM COTTON</span></li>
+          <li><b>100%</b><span>MADE IN INDIA</span></li>
+          <li><b>7</b><span>DAY RETURNS</span></li>
+        </ul>
+      </div>
+      <div class="look-img look-b"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80" alt="Lookbook look 2" data-ph="LOOK 02" /><span>LOOK 02</span></div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="block block-dark">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>#WEARTHE<span class="lime">VOID</span></h2>
+        <a href="#" class="btn btn-line btn-sm">FOLLOW @VOIDWEAR</a>
+      </div>
+      <div class="community">
+        <div class="quote">
+          <p>"Fit is insane. Quality feels way more premium than the price. Already ordered my third hoodie."</p>
+          <span>— Aryan, Pune ★★★★★</span>
+        </div>
+        <div class="quote">
+          <p>"Delivered in 3 days, the packaging was 🔥. That oversized tee is my new daily wear."</p>
+          <span>— Sneha, Jaipur ★★★★★</span>
+        </div>
+        <div class="quote">
+          <p>"Exchanged a size over WhatsApp in 5 minutes. Respect to the support team."</p>
+          <span>— Kabir, Hyderabad ★★★★★</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap faq-wrap">
+      <h2>GOT <span class="lime">QUESTIONS?</span></h2>
+      <div class="faq">
+        <details open><summary>How long does delivery take?</summary><p>Metro cities take 2–4 days and the rest of India 4–7 days. You'll get a tracking link on WhatsApp.</p></details>
+        <details><summary>Is Cash on Delivery available?</summary><p>Yes, COD is available across India for orders up to ₹5,000.</p></details>
+        <details><summary>How do I pick my size?</summary><p>Our tees are oversized. Take your regular size for a relaxed fit, or one size down for a closer fit.</p></details>
+        <details><summary>What's your return policy?</summary><p>You get easy 7-day returns and exchanges on unworn items with the tags still attached.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section class="join">
+    <div class="wrap join-in">
+      <h2>JOIN THE <span class="outline-dark">VOID</span></h2>
+      <p>Get early access to drops and members-only prices.</p>
+      <form class="join-form" id="joinForm">
+        <input type="email" required placeholder="your@email.com" aria-label="Email" />
+        <button class="btn btn-black" type="submit">JOIN →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a href="#" class="logo">VOID<span>WEAR</span></a>
+        <p>Streetwear for the ones who don't blend in. Designed in India.</p>
+      </div>
+      <div><h5>SHOP</h5><a href="#shop">T-Shirts</a><a href="#shop">Hoodies</a><a href="#shop">Bottoms</a><a href="#shop">Footwear</a></div>
+      <div><h5>HELP</h5><a href="#faq">FAQ</a><a href="#">Track Order</a><a href="#">Size Guide</a><a href="#">Returns</a></div>
+      <div><h5>CONTACT</h5><p>support@voidwear.in</p><p>+91 98765 43210</p><p>Mon–Sat · 10am–7pm</p></div>
+    </div>
+    <div class="wrap foot-bottom">
+      <span>© <span id="year"></span> VOIDWEAR</span>
+      <span>UPI · CARDS · COD</span>
+    </div>
+    <div class="giant">VOIDWEAR</div>
+  </footer>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bottom-nav">
+    <a href="#"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9H3z"/></svg>Home</a>
+    <a href="#shop"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>Shop</a>
+    <button id="bnSearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search</button>
+    <button id="bnCart"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 12.5H6.2L5 7z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>Cart <i class="count" id="cartCount2">0</i></button>
+  </nav>
+
+  <!-- Search overlay -->
+  <div class="search-ov" id="searchOv">
+    <div class="wrap">
+      <div class="search-top">
+        <input type="search" id="searchInput" placeholder="SEARCH HOODIES, TEES, CARGOS…" aria-label="Search" />
+        <button class="ibtn" id="closeSearch" aria-label="Close search"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- Product modal -->
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <button class="ibtn modal-x" id="closeModal" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="cart" id="cart">
+    <div class="cart-head">
+      <h3>CART <span id="cartHeadCount">(0)</span></h3>
+      <button class="ibtn" id="closeCart" aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="ship">
+      <p id="shipMsg"></p>
+      <div class="ship-bar"><span id="shipFill"></span></div>
+    </div>
+    <div class="cart-list" id="cartList"></div>
+    <div class="cart-foot">
+      <form class="coupon" id="couponForm">
+        <input id="couponInput" placeholder="COUPON CODE" aria-label="Coupon code" />
+        <button class="btn btn-line btn-sm" type="submit">APPLY</button>
+      </form>
+      <div class="sum"><span>Subtotal</span><span id="subTotal">₹0</span></div>
+      <div class="sum discount" id="discountRow" hidden><span>Discount (<b id="couponName"></b>)</span><span id="discount">−₹0</span></div>
+      <div class="sum total"><span>TOTAL</span><span id="grandTotal">₹0</span></div>
+      <button class="btn btn-lime btn-full" id="checkout">CHECKOUT ON WHATSAPP</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
