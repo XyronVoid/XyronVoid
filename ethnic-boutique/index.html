@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZARIYA — Handcrafted Indian Ethnic Wear</title>
+  <meta name="description" content="ZARIYA — handcrafted sarees, lehengas and kurta sets. Wedding and festive collections, with custom stitching and video-call shopping." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Reusable ornament -->
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="motif" viewBox="0 0 120 24">
+      <path d="M0 12h44M76 12h44" stroke="currentColor" stroke-width="1"/>
+      <path d="M60 2c4 6 10 10 16 10-6 0-12 4-16 10-4-6-10-10-16-10 6 0 12-4 16-10z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <circle cx="60" cy="12" r="2.2" fill="currentColor"/>
+      <circle cx="40" cy="12" r="1.6" fill="currentColor"/><circle cx="80" cy="12" r="1.6" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <div class="strip">
+    ✦ Free shipping across India &nbsp;·&nbsp; Custom stitching available &nbsp;·&nbsp; Worldwide delivery ✦
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="wrap header-in">
+      <button class="ib menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      <nav class="nav nav-left" id="nav">
+        <a href="#collections">Sarees</a>
+        <a href="#collections">Lehengas</a>
+        <a href="#collections">Kurta Sets</a>
+        <a href="#occasions">Occasions</a>
+        <a href="#visit">Appointment</a>
+      </nav>
+      <a href="#" class="logo">
+        <span class="logo-main">ZARIYA</span>
+        <span class="logo-sub">HANDCRAFTED · SINCE 1998</span>
+      </a>
+      <div class="actions">
+        <button class="ib" id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+        <button class="ib" id="wishBtn" aria-label="Wishlist"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-8.8-8.6C1.8 8.1 4 4.8 7.3 4.8c1.9 0 3.4 1 4.7 2.6 1.3-1.6 2.8-2.6 4.7-2.6 3.3 0 5.5 3.3 4.1 6.6C19 15.7 12 20 12 20z"/></svg><i class="dot" id="wishCount">0</i></button>
+        <button class="ib" id="cartBtn" aria-label="Bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg><i class="dot" id="cartCount">0</i></button>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <div class="wrap">
+        <input type="search" id="searchInput" placeholder="Search Banarasi saree, lehenga, Chanderi kurta…" aria-label="Search" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero slider -->
+  <section class="hero" id="hero">
+    <div class="slides" id="slides">
+      <article class="slide active">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1600&q=80&auto=format&fit=crop" alt="Bride in a red Banarasi saree" data-ph="The Wedding Edit" />
+        <div class="slide-copy">
+          <p class="eyebrow">The Wedding Edit · 2026</p>
+          <h1>Woven in <em>tradition</em>,<br/>made for your day</h1>
+          <p>Handwoven Banarasi silks and bridal lehengas crafted by master artisans.</p>
+          <a href="#collections" class="btn btn-gold">Explore Bridal</a>
+        </div>
+      </article>
+      <article class="slide">
+        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1600&q=80&auto=format&fit=crop" alt="Woman in a festive lehenga" data-ph="Festive Season" />
+        <div class="slide-copy">
+          <p class="eyebrow">Festive Season</p>
+          <h1>Celebrate in <em>colour</em></h1>
+          <p>Lehengas and anarkalis in jewel tones, from ₹4,999.</p>
+          <a href="#collections" class="btn btn-gold">Shop Festive</a>
+        </div>
+      </article>
+      <article class="slide">
+        <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=1600&q=80&auto=format&fit=crop" alt="Woman in a cotton kurta set" data-ph="Everyday Grace" />
+        <div class="slide-copy">
+          <p class="eyebrow">Everyday Grace</p>
+          <h1>Soft cottons for <em>every day</em></h1>
+          <p>Block-printed kurta sets, breathable and effortless.</p>
+          <a href="#collections" class="btn btn-gold">Shop Kurta Sets</a>
+        </div>
+      </article>
+    </div>
+    <button class="hero-arrow prev" id="prevSlide" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button class="hero-arrow next" id="nextSlide" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- Promise -->
+  <section class="promise">
+    <div class="wrap promise-in">
+      <div><b>100%</b><span>Handcrafted</span></div>
+      <div><b>200+</b><span>Artisan families</span></div>
+      <div><b>Silk Mark</b><span>Certified silks</span></div>
+      <div><b>7-day</b><span>Easy returns</span></div>
+    </div>
+  </section>
+
+  <!-- Occasions -->
+  <section class="sec" id="occasions">
+    <div class="wrap">
+      <div class="title">
+        <svg class="motif"><use href="#motif"/></svg>
+        <h2>Shop by Occasion</h2>
+        <p>Find the perfect drape for every moment</p>
+      </div>
+      <div class="occasions" id="occasionList"></div>
+    </div>
+  </section>
+
+  <!-- Collection -->
+  <section class="sec sec-ivory" id="collections">
+    <div class="wrap">
+      <div class="title">
+        <svg class="motif"><use href="#motif"/></svg>
+        <h2 id="collTitle">Our Collection</h2>
+        <p>Every piece is made in small batches by hand</p>
+      </div>
+      <div class="toolbar">
+        <div class="chips" id="typeChips"></div>
+        <div class="chips chips-sm" id="fabricChips"></div>
+        <select id="sort" class="select" aria-label="Sort by">
+          <option value="featured">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- Shop the look -->
+  <section class="sec">
+    <div class="wrap look">
+      <div class="look-img" id="lookImg">
+        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=1000&q=80&auto=format&fit=crop" alt="Model wearing a complete ZARIYA look" data-ph="Shop the Look" />
+        <button class="hotspot" style="top:30%;left:48%" data-spot="7" aria-label="View dupatta"><span></span></button>
+        <button class="hotspot" style="top:52%;left:40%" data-spot="3" aria-label="View lehenga"><span></span></button>
+        <button class="hotspot" style="top:18%;left:58%" data-spot="12" aria-label="View jhumkas"><span></span></button>
+      </div>
+      <div class="look-copy">
+        <p class="eyebrow">Shop the Look</p>
+        <h2>The Sangeet <em>Story</em></h2>
+        <p>Tap the dots on the photo to see each piece. Style the whole look or pick your favourites.</p>
+        <div class="look-items" id="lookItems"></div>
+        <button class="btn btn-maroon" id="addLook">Add complete look to bag</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craft story -->
+  <section class="craft">
+    <div class="wrap craft-in">
+      <div class="craft-copy">
+        <svg class="motif motif-light"><use href="#motif"/></svg>
+        <h2>Three generations of <em>weaving</em></h2>
+        <p>ZARIYA began in a small Varanasi workshop in 1998. Today we work directly with over 200 artisan families across Banaras, Chanderi, Jaipur and Kanchipuram. Every purchase supports their craft and pays them fairly.</p>
+        <div class="craft-steps">
+          <div><b>01</b><span>Hand-dyed yarn</span></div>
+          <div><b>02</b><span>Woven on pit looms</span></div>
+          <div><b>03</b><span>Finished by hand</span></div>
+        </div>
+      </div>
+      <div class="craft-img arch"><img src="https://images.unsplash.com/photo-1606744888344-493238951221?w=900&q=80&auto=format&fit=crop" alt="Artisan weaving on a handloom" data-ph="Handloom" /></div>
+    </div>
+  </section>
+
+  <!-- Recently viewed -->
+  <section class="sec" id="recentSec" hidden>
+    <div class="wrap">
+      <div class="title title-left"><h2>Recently Viewed</h2></div>
+      <div class="recent" id="recent"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="sec sec-ivory">
+    <div class="wrap">
+      <div class="title">
+        <svg class="motif"><use href="#motif"/></svg>
+        <h2>Our Brides Say</h2>
+      </div>
+      <div class="quotes" id="quotes">
+        <blockquote class="q active">"My wedding lehenga from ZARIYA was beyond my dreams. The custom fitting over video call was so easy, and it fit me perfectly!"<cite>Meera Iyer · Chennai</cite></blockquote>
+        <blockquote class="q">"The Banarasi saree is pure magic. My mother cried when she saw the zari work. It's truly heirloom quality."<cite>Ritika Agarwal · Kolkata</cite></blockquote>
+        <blockquote class="q">"I ordered from London and it arrived in 6 days, beautifully gift-wrapped. Will shop here for every festival."<cite>Simran Kaur · London</cite></blockquote>
+      </div>
+      <div class="q-dots" id="qDots"></div>
+    </div>
+  </section>
+
+  <!-- Visit / appointment -->
+  <section class="sec" id="visit">
+    <div class="wrap visit">
+      <div class="visit-copy">
+        <p class="eyebrow">Personal Styling</p>
+        <h2>Shop with us on a <em>video call</em></h2>
+        <p>Can't visit the boutique? Book a free video call and our stylist will show you sarees and lehengas live, help with draping, and take measurements for custom stitching.</p>
+        <ul class="visit-info">
+          <li>📍 <span><b>Flagship Boutique</b><br/>12, Linking Road, Bandra West, Mumbai</span></li>
+          <li>🕙 <span><b>Open daily</b><br/>11:00 AM – 8:30 PM</span></li>
+          <li>📞 <span><b>+91 98765 43210</b><br/>Call or WhatsApp</span></li>
+        </ul>
+      </div>
+      <form class="appt" id="apptForm">
+        <h3>Book a free appointment</h3>
+        <div class="seg" id="apptType">
+          <button type="button" class="on" data-type="Video call">📹 Video call</button>
+          <button type="button" data-type="Boutique visit">🏬 Boutique visit</button>
+        </div>
+        <input id="apName" placeholder="Your name" required />
+        <input id="apPhone" placeholder="WhatsApp number" inputmode="tel" required />
+        <div class="row2">
+          <input id="apDate" type="date" required aria-label="Preferred date" />
+          <select id="apTime" class="select" aria-label="Preferred time">
+            <option>11:00 AM</option><option>1:00 PM</option><option>3:00 PM</option><option>5:00 PM</option><option>7:00 PM</option>
+          </select>
+        </div>
+        <select id="apFor" class="select" aria-label="Looking for">
+          <option>Bridal lehenga</option><option>Wedding saree</option><option>Festive wear</option><option>Custom stitching</option><option>Just browsing</option>
+        </select>
+        <button class="btn btn-maroon btn-full" type="submit">Confirm on WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-top">
+        <a href="#" class="logo logo-light"><span class="logo-main">ZARIYA</span><span class="logo-sub">HANDCRAFTED · SINCE 1998</span></a>
+        <form class="news" id="newsForm">
+          <input type="email" placeholder="Join for new arrivals & festive offers" required aria-label="Email" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="foot-grid">
+        <div><h5>Shop</h5><a href="#collections">Sarees</a><a href="#collections">Lehengas</a><a href="#collections">Kurta Sets</a><a href="#collections">Jewellery</a></div>
+        <div><h5>Help</h5><a href="#">Size Guide</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Care Instructions</a></div>
+        <div><h5>About</h5><a href="#">Our Artisans</a><a href="#">Craft Stories</a><a href="#visit">Visit Boutique</a><a href="#">Contact</a></div>
+        <div><h5>Follow</h5><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Pinterest</a><a href="#">YouTube</a></div>
+      </div>
+      <div class="foot-bottom"><span>© <span id="year"></span> ZARIYA Handcrafted</span><span>UPI · Cards · COD · PayPal</span></div>
+    </div>
+  </footer>
+
+  <!-- Product modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" data-close aria-label="Close">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Size guide -->
+  <div class="modal" id="sizeModal" aria-hidden="true">
+    <div class="modal-card modal-sm">
+      <button class="close" data-close-size aria-label="Close">✕</button>
+      <h3>Size Guide <small>(in inches)</small></h3>
+      <table class="size-table">
+        <thead><tr><th>Size</th><th>Bust</th><th>Waist</th><th>Hip</th></tr></thead>
+        <tbody>
+          <tr><td>XS</td><td>32</td><td>26</td><td>35</td></tr>
+          <tr><td>S</td><td>34</td><td>28</td><td>37</td></tr>
+          <tr><td>M</td><td>36</td><td>30</td><td>39</td></tr>
+          <tr><td>L</td><td>38</td><td>32</td><td>41</td></tr>
+          <tr><td>XL</td><td>40</td><td>34</td><td>43</td></tr>
+          <tr><td>XXL</td><td>42</td><td>36</td><td>45</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Between sizes? Choose <b>custom stitching</b> and we'll tailor it to your exact measurements.</p>
+    </div>
+  </div>
+
+  <!-- Drawers -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping bag">
+    <div class="drawer-head"><h3>Your Bag</h3><button class="close" data-close aria-label="Close">✕</button></div>
+    <div class="drawer-body" id="cartBody"></div>
+    <div class="drawer-foot" id="cartFoot">
+      <label class="gift"><input type="checkbox" id="giftWrap" /> <span>🎁 Add luxury gift wrap <b>+₹99</b></span></label>
+      <textarea id="giftMsg" rows="2" placeholder="Gift message (optional)" hidden></textarea>
+      <div class="sumrow"><span>Subtotal</span><span id="cSub">₹0</span></div>
+      <div class="sumrow" id="cStitchRow" hidden><span>Custom stitching</span><span id="cStitch">₹0</span></div>
+      <div class="sumrow" id="cGiftRow" hidden><span>Gift wrap</span><span>₹99</span></div>
+      <div class="sumrow total"><span>Total</span><span id="cTotal">₹0</span></div>
+      <button class="btn btn-maroon btn-full" id="checkout">Checkout on WhatsApp</button>
+      <p class="muted center">Free shipping · COD available</p>
+    </div>
+  </aside>
+  <aside class="drawer" id="wishDrawer" aria-label="Wishlist">
+    <div class="drawer-head"><h3>Wishlist</h3><button class="close" data-close aria-label="Close">✕</button></div>
+    <div class="drawer-body" id="wishBody"></div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
