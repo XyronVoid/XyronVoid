@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Butterbloom — Home Bakery</title>
+<meta name="description" content="Butterbloom — fresh cakes, cupcakes, macarons and cookies baked every morning. Eggless options, message on cake, same-day and midnight delivery." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Outfit:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="announce">🎂 Same-day delivery on orders before 4 PM · 🌱 Eggless on every cake · 🌙 Midnight delivery available</div>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a href="#top" class="logo" id="top"><span class="logo-mark">✿</span>Butterbloom</a>
+    <nav class="nav" id="nav">
+      <a href="#menu">Menu</a>
+      <a href="#occasions">Occasions</a>
+      <a href="#custom">Custom Cake</a>
+      <a href="#story">Our Story</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <div class="actions">
+      <button class="pin-btn hide-sm" id="pinBtn"><span>📍</span><b id="pinLabel">Check delivery</b></button>
+      <button class="box-btn" id="boxBtn" aria-label="Open your box">
+        <svg viewBox="0 0 24 24"><path d="M3 9h18v11H3z"/><path d="M3 9l2-5h14l2 5"/><path d="M12 4v16"/></svg>
+        <span id="boxCount">0</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <span class="sticker">Fresh out of the oven ✿</span>
+      <h1>Baked this <em>morning</em>,<br />on your table by evening.</h1>
+      <p>Small-batch cakes, cupcakes and cookies made with real butter, Belgian chocolate and zero shortcuts. Every cake can be made eggless.</p>
+      <div class="cutoff" id="cutoff">⏰ Order in <b>--:--:--</b> for same-day delivery</div>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-berry">Order a cake →</a>
+        <a href="#custom" class="btn btn-ghost">Design your own</a>
+      </div>
+      <ul class="hero-stats">
+        <li><b>4.9★</b><span>8,200+ orders</span></li>
+        <li><b>100%</b><span>eggless option</span></li>
+        <li><b>3 hr</b><span>fastest delivery</span></li>
+      </ul>
+    </div>
+    <div class="hero-art">
+      <div class="hero-photo"><img src="images/chocolate-lovers-cake.jpg" alt="Chocolate cake with ganache drip and chocolate shards on a cake stand" /></div>
+      <div class="float f1"><span class="veg"></span> Eggless available</div>
+      <div class="float f2">🍫 Belgian chocolate</div>
+      <div class="float f3"><b>from ₹649</b><small>half kg</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip-wrap">
+<div class="strip">
+  <div class="strip-track">
+    <span>Chocolate truffle</span><span>✿</span><span>Salted caramel</span><span>✿</span><span>Lemon raspberry</span><span>✿</span><span>Red velvet</span><span>✿</span><span>Pistachio rose</span><span>✿</span><span>Brown butter cookies</span><span>✿</span>
+    <span>Chocolate truffle</span><span>✿</span><span>Salted caramel</span><span>✿</span><span>Lemon raspberry</span><span>✿</span><span>Red velvet</span><span>✿</span><span>Pistachio rose</span><span>✿</span><span>Brown butter cookies</span><span>✿</span>
+  </div>
+</div>
+</div>
+
+<!-- Occasions -->
+<section class="sec" id="occasions">
+  <div class="wrap">
+    <div class="head head-center">
+      <span class="kicker">What are we celebrating?</span>
+      <h2>Shop by <em>occasion</em></h2>
+    </div>
+    <div class="occasions" id="occasionList"></div>
+  </div>
+</section>
+
+<!-- Menu -->
+<section class="sec sec-butter" id="menu">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">Today's menu</span>
+        <h2>Freshly <em>baked</em> for you</h2>
+      </div>
+      <label class="switch"><input type="checkbox" id="egglessOnly" /><span class="track"></span><span class="veg"></span> Eggless only</label>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <p class="active-filter" id="activeFilter" hidden></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head head-center">
+      <span class="kicker">Easy as pie</span>
+      <h2>How <em>ordering</em> works</h2>
+    </div>
+    <ol class="steps">
+      <li><span>1</span><h3>Pick &amp; personalise</h3><p>Choose a size, go eggless and add a message for the cake.</p></li>
+      <li><span>2</span><h3>Choose a slot</h3><p>Same-day, a later date or a midnight surprise. You pick the time.</p></li>
+      <li><span>3</span><h3>Confirm on WhatsApp</h3><p>Your full order lands in our chat. Pay by UPI and we start baking.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Custom cake -->
+<section class="sec custom" id="custom">
+  <div class="wrap custom-in">
+    <div class="custom-copy">
+      <span class="kicker">Made just for you</span>
+      <h2>Dreaming of a <em>custom</em> cake?</h2>
+      <p>Photo cakes, theme cakes, tiered wedding cakes or a cake that looks like your dog. Tell us your idea and we'll send a design and quote within 2 hours.</p>
+      <ul class="ticks">
+        <li>Free design sketch before we bake</li>
+        <li>Any flavour, any size from 1 kg</li>
+        <li>Order at least 2 days ahead</li>
+      </ul>
+    </div>
+    <form class="custom-form" id="customForm">
+      <h3>Custom cake enquiry</h3>
+      <div class="field-row">
+        <label>Occasion
+          <select name="occasion" id="customOccasion"></select>
+        </label>
+        <label>Weight
+          <select name="weight">
+            <option>1 kg</option><option>1.5 kg</option><option>2 kg</option><option>3 kg</option><option>5 kg or more</option>
+          </select>
+        </label>
+      </div>
+      <div class="field-row">
+        <label>Flavour
+          <select name="flavour">
+            <option>Chocolate truffle</option><option>Salted caramel</option><option>Red velvet</option><option>Lemon raspberry</option><option>Vanilla bean</option><option>Pistachio rose</option><option>Not sure yet</option>
+          </select>
+        </label>
+        <label>Date needed
+          <input type="date" name="date" id="customDate" required />
+        </label>
+      </div>
+      <label class="check"><input type="checkbox" name="eggless" checked /> <span class="veg"></span> Make it eggless</label>
+      <label>Describe your idea
+        <textarea name="idea" rows="3" placeholder="E.g. two-tier pastel cake with gold drip and a unicorn topper for my daughter's 5th birthday" required></textarea>
+      </label>
+      <button class="btn btn-berry btn-full" type="submit">Send enquiry on WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="sec" id="story">
+  <div class="wrap story">
+    <div class="story-photo"><img src="images/bakers.jpg" alt="Two smiling bakers behind a counter full of cakes and pastries" loading="lazy" /><span class="story-badge">Since 2019</span></div>
+    <div class="story-copy">
+      <span class="kicker">Our story</span>
+      <h2>Two friends, one oven &amp; a lot of <em>butter</em></h2>
+      <p>Butterbloom started in a tiny home kitchen with one borrowed oven and a birthday cake for a neighbour. Today we bake hundreds of cakes a week, but every one is still made by hand, in small batches, on the morning it's delivered.</p>
+      <ul class="stats">
+        <li><b>0</b><span>preservatives or premixes</span></li>
+        <li><b>8,200+</b><span>celebrations so far</span></li>
+        <li><b>6 am</b><span>when the ovens go on</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec sec-pink" id="reviews">
+  <div class="wrap">
+    <div class="head head-center">
+      <span class="kicker">Sweet words</span>
+      <h2>Loved in <em>every</em> slice</h2>
+    </div>
+    <div class="reviews">
+      <article><div class="stars">★★★★★</div><p>"Ordered the Chocolate Lovers cake eggless for my mom's 60th. Nobody believed it had no eggs. Delivered right on time too!"</p><footer><span class="av">NS</span><div><b>Neha S.</b><small>Birthday · Indiranagar</small></div></footer></article>
+      <article><div class="stars">★★★★★</div><p>"The midnight delivery was the best surprise for my husband. The message on the cake was written beautifully."</p><footer><span class="av">RK</span><div><b>Ritika K.</b><small>Anniversary · HSR Layout</small></div></footer></article>
+      <article><div class="stars">★★★★★</div><p>"Our wedding cake was exactly like the sketch they sent. Guests are still talking about the lemon raspberry tier."</p><footer><span class="av">AV</span><div><b>Arjun &amp; Vani</b><small>Wedding · Whitefield</small></div></footer></article>
+      <article><div class="stars">★★★★☆</div><p>"The choco chip cookies are dangerous. A box of 12 disappeared in one evening. Wish they had a box of 24!"</p><footer><span class="av">KM</span><div><b>Karan M.</b><small>Just because · Koramangala</small></div></footer></article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-wrap">
+    <div>
+      <span class="kicker">Good to know</span>
+      <h2>Questions, <em>answered</em></h2>
+      <p class="muted">Still unsure? Message us on WhatsApp and a real baker will reply.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>Can every cake be made eggless?</summary><p>Yes. Every cake and cupcake comes in an eggless version for a small extra charge. Our cookies are always eggless. Macarons need egg whites, so they are the only exception.</p></details>
+      <details><summary>How late can I order for same-day delivery?</summary><p>Order before 4 PM and choose any slot that starts at least 3 hours later. The wedding cake needs 3 days' notice.</p></details>
+      <details><summary>How does midnight delivery work?</summary><p>Pick the midnight slot when you check out. We deliver between 11:30 PM and 12 AM so the surprise lands right on time.</p></details>
+      <details><summary>Which areas do you deliver to?</summary><p>We deliver across Bengaluru. Type your pincode in your box to check.</p></details>
+      <details><summary>How do I pay?</summary><p>Once you send your order on WhatsApp, we confirm it and share a UPI link. Cash on delivery is available for orders under ₹2,000.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="sec sec-tight">
+  <div class="wrap">
+    <div class="news">
+      <div>
+        <h2>Never miss a <em>birthday</em></h2>
+        <p>Join our list for new flavours, festival menus and ₹100 off your first order.</p>
+      </div>
+      <form id="newsForm" class="news-form">
+        <input type="email" placeholder="your@email.com" required aria-label="Email" />
+        <button class="btn btn-berry" type="submit">Join</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a href="#top" class="logo"><span class="logo-mark">✿</span>Butterbloom</a>
+      <p>Small-batch home bakery. Baked fresh every morning in Bengaluru.</p>
+    </div>
+    <div><h5>Menu</h5><a href="#menu">Cakes</a><a href="#menu">Cupcakes &amp; macarons</a><a href="#menu">Cookies</a><a href="#custom">Custom cakes</a></div>
+    <div><h5>Help</h5><a href="#faq">Delivery</a><a href="#faq">Eggless options</a><a href="#faq">Payments</a><a href="#faq">FAQs</a></div>
+    <div><h5>Say hi</h5><a href="#top">Instagram</a><a href="#top">hello@butterbloom.in</a><a href="#top">+91 98765 43210</a><span class="muted">Open 8 AM – 10 PM</span></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© <span id="year"></span> Butterbloom. All rights reserved.</span><span>FSSAI Lic. 00000000000000 · UPI · COD</span></div>
+</footer>
+
+<!-- Cake customiser -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+  <div class="modal-card">
+    <button class="x" data-close aria-label="Close">✕</button>
+    <div class="m-media">
+      <img id="mImg" src="" alt="" />
+      <div class="plaque" id="mPlaque" hidden></div>
+    </div>
+    <div class="m-body">
+      <h3 id="mTitle"></h3>
+      <p class="m-desc" id="mDesc"></p>
+      <h4>Size</h4>
+      <div class="opts" id="mSizes"></div>
+      <div id="mEggWrap">
+        <h4>Egg or eggless?</h4>
+        <div class="opts" id="mEgg"></div>
+      </div>
+      <div id="mMsgWrap">
+        <h4>Message on the cake <small id="mMsgCount">0/30</small></h4>
+        <input type="text" id="mMsg" maxlength="30" placeholder="Happy Birthday Riya!" />
+      </div>
+      <p class="m-lead" id="mLead" hidden></p>
+      <button class="btn btn-berry btn-full" id="mAdd">Add to box</button>
+    </div>
+  </div>
+</div>
+
+<!-- Box drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="box" id="box" aria-label="Your box">
+  <div class="box-head"><h3>Your box</h3><button class="x" data-close aria-label="Close box">✕</button></div>
+  <div class="ship"><p id="shipMsg"></p><div class="ship-bar"><span id="shipBar"></span></div></div>
+  <div class="box-body">
+    <div id="boxItems"></div>
+    <div id="boxExtras">
+      <div class="addons"><h4>Make it a party</h4><div class="addon-list" id="addonList"></div></div>
+      <div class="delivery">
+        <h4>Delivery details</h4>
+        <label>Pincode
+          <span class="pin-row"><input type="text" id="pin" inputmode="numeric" maxlength="6" placeholder="560001" /><button class="btn btn-small" id="pinCheck" type="button">Check</button></span>
+        </label>
+        <p class="pin-msg" id="pinMsg"></p>
+        <div class="field-row">
+          <label>Date <input type="date" id="dDate" /></label>
+          <label>Time slot <select id="dSlot"></select></label>
+        </div>
+        <p class="muted small" id="dateNote"></p>
+      </div>
+    </div>
+  </div>
+  <div class="box-foot" id="boxFoot">
+    <div class="row"><span>Bakes</span><span id="bSub">₹0</span></div>
+    <div class="row" id="bAddonRow" hidden><span>Party add-ons</span><span id="bAddons">₹0</span></div>
+    <div class="row"><span>Delivery</span><span id="bShip">₹0</span></div>
+    <div class="row" id="bMidRow" hidden><span>Midnight delivery</span><span id="bMid">₹0</span></div>
+    <div class="row total"><span>Total</span><span id="bTotal">₹0</span></div>
+    <button class="btn btn-berry btn-full" id="checkout">Order on WhatsApp</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
