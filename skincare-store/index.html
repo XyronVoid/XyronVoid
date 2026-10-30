@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dewly. — Clean Skincare</title>
+  <meta name="description" content="dewly. — clean, science-backed skincare made for Indian skin. Take the skin quiz, build your routine and get free samples." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="announce">✿ Free shipping over ₹499 · 2 free samples over ₹999 · Dermatologist tested ✿</div>
+
+  <header class="header" id="header">
+    <div class="wrap header-in">
+      <a href="#" class="logo">dewly<span>.</span></a>
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#quiz">Skin Quiz</a>
+        <a href="#bundle">Build a Routine</a>
+        <a href="#ingredients">Ingredients</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <div class="actions">
+        <a href="#quiz" class="pill-btn hide-sm">Take the quiz ✨</a>
+        <button class="bag-btn" id="bagBtn" aria-label="Open bag">
+          <svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+          <span id="bagCount">0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <span class="sticker">NEW · Vitamin C Glow Serum</span>
+        <h1>Skin that <em>glows</em>,<br/>backed by science.</h1>
+        <p>Clean, gentle formulas made for Indian skin and Indian weather. No parabens, no sulphates, no fake promises.</p>
+        <div class="hero-cta">
+          <a href="#quiz" class="btn btn-plum">Find my routine →</a>
+          <a href="#shop" class="btn btn-ghost">Shop bestsellers</a>
+        </div>
+        <div class="hero-proof">
+          <div class="avatars"><span>AK</span><span>PS</span><span>RN</span><span>+</span></div>
+          <p><b>4.8/5</b> from 12,400+ reviews<br/><small>"My skin has never looked this good"</small></p>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="blob"></div>
+        <div class="hero-photo" id="heroPhoto"></div>
+        <div class="float f1">💧 Hyaluronic Acid</div>
+        <div class="float f2">🍊 Vitamin C</div>
+        <div class="float f3">🌿 Niacinamide</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Badges -->
+  <div class="badges">
+    <div class="badges-track">
+      <span>🐰 Cruelty free</span><span>🌱 Vegan</span><span>🧪 Dermatologist tested</span><span>🚫 Paraben free</span><span>♻️ Recyclable packs</span><span>🇮🇳 Made in India</span>
+      <span>🐰 Cruelty free</span><span>🌱 Vegan</span><span>🧪 Dermatologist tested</span><span>🚫 Paraben free</span><span>♻️ Recyclable packs</span><span>🇮🇳 Made in India</span>
+    </div>
+  </div>
+
+  <!-- Shop -->
+  <section class="sec" id="shop">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="kicker">The collection</span>
+          <h2>Shop by <em>skin concern</em></h2>
+        </div>
+        <select id="typeSelect" class="select" aria-label="Skin type">
+          <option value="all">All skin types</option>
+          <option value="oily">Oily skin</option>
+          <option value="dry">Dry skin</option>
+          <option value="combination">Combination skin</option>
+          <option value="sensitive">Sensitive skin</option>
+        </select>
+      </div>
+      <div class="concerns" id="concerns"></div>
+      <p class="active-filter" id="activeFilter" hidden></p>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="sec sec-blush" id="quiz">
+    <div class="wrap">
+      <div class="quiz">
+        <div class="quiz-side">
+          <span class="kicker">2-minute skin quiz</span>
+          <h2>Not sure where to <em>start?</em></h2>
+          <p>Answer 4 quick questions and we'll build a personalised routine for you, with <b>15% off</b> the full set.</p>
+          <div class="quiz-progress"><span id="quizBar"></span></div>
+          <small id="quizStep">Question 1 of 4</small>
+        </div>
+        <div class="quiz-card" id="quizCard"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bundle builder -->
+  <section class="sec" id="bundle">
+    <div class="wrap">
+      <div class="head head-center">
+        <span class="kicker">Build your own routine</span>
+        <h2>Pick any 3, get <em>20% off</em></h2>
+        <p class="sub">Mix and match a cleanser, serum, moisturiser, sunscreen… whatever your skin needs.</p>
+      </div>
+      <div class="bundle">
+        <div class="bundle-picks" id="bundlePicks"></div>
+        <div class="bundle-box">
+          <h3>Your routine</h3>
+          <div class="slots" id="slots"></div>
+          <div class="bundle-total" id="bundleTotal"></div>
+          <button class="btn btn-plum btn-full" id="addBundle" disabled>Pick 3 products</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / after -->
+  <section class="sec sec-peach">
+    <div class="wrap ba-wrap">
+      <div class="ba" id="ba">
+        <div class="ba-img ba-before" id="baBefore"></div>
+        <div class="ba-img ba-after" id="baAfter"></div>
+        <span class="ba-tag left">Week 0</span>
+        <span class="ba-tag right">Week 4</span>
+        <div class="ba-handle" id="baHandle"><span>⟷</span></div>
+        <input type="range" min="0" max="100" value="50" id="baRange" aria-label="Drag to compare before and after" />
+      </div>
+      <div class="ba-copy">
+        <span class="kicker">Real results</span>
+        <h2>Visible glow in <em>4 weeks</em></h2>
+        <p>In a clinical study of 120 Indian women using the Glow Routine twice a day:</p>
+        <ul class="stats">
+          <li><b>92%</b><span>saw brighter, more even skin</span></li>
+          <li><b>87%</b><span>said dark spots looked lighter</span></li>
+          <li><b>3×</b><span>more hydration after one use</span></li>
+        </ul>
+        <small class="muted">Drag the slider on the photo to compare. Results may vary.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ingredients -->
+  <section class="sec" id="ingredients">
+    <div class="wrap">
+      <div class="head head-center">
+        <span class="kicker">Know what you apply</span>
+        <h2>Our <em>hero</em> ingredients</h2>
+        <p class="sub">Tap an ingredient to see every product that has it.</p>
+      </div>
+      <div class="ingredients" id="ingredientList"></div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="sec sec-blush" id="reviews">
+    <div class="wrap">
+      <div class="head head-center">
+        <span class="kicker">12,400+ happy faces</span>
+        <h2>Real people, <em>real skin</em></h2>
+      </div>
+      <div class="reviews">
+        <article><div class="stars">★★★★★</div><p>"I've had oily, acne-prone skin for 8 years. The niacinamide serum calmed my breakouts in just 3 weeks. Obsessed!"</p><footer><span class="av">AK</span><div><b>Aditi K.</b><small>Oily skin · Pune</small></div></footer></article>
+        <article><div class="stars">★★★★★</div><p>"Finally a sunscreen with no white cast on my skin tone! It feels like nothing on the skin, even in Chennai heat."</p><footer><span class="av">PS</span><div><b>Priya S.</b><small>Combination skin · Chennai</small></div></footer></article>
+        <article><div class="stars">★★★★★</div><p>"The quiz recommended a 3-step routine, and my dry patches are gone. The free samples were a sweet touch 💕"</p><footer><span class="av">RN</span><div><b>Rhea N.</b><small>Dry skin · Delhi</small></div></footer></article>
+        <article><div class="stars">★★★★☆</div><p>"Vitamin C serum gave me a real glow before my sister's wedding. I'd love a bigger bottle next time!"</p><footer><span class="av">MJ</span><div><b>Meghna J.</b><small>Normal skin · Indore</small></div></footer></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="news">
+        <div>
+          <h2>Join the <em>dew</em> club</h2>
+          <p>Get skincare tips, early access to launches and 10% off your first order.</p>
+        </div>
+        <form id="newsForm" class="news-form">
+          <input type="email" placeholder="your@email.com" required aria-label="Email" />
+          <button class="btn btn-plum" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a href="#" class="logo">dewly<span>.</span></a>
+        <p>Clean skincare, made with love for Indian skin.</p>
+      </div>
+      <div><h5>Shop</h5><a href="#shop">Cleansers</a><a href="#shop">Serums</a><a href="#shop">Moisturisers</a><a href="#shop">Sunscreen</a></div>
+      <div><h5>Help</h5><a href="#quiz">Skin quiz</a><a href="#">Track order</a><a href="#">Returns</a><a href="#">FAQs</a></div>
+      <div><h5>Say hi</h5><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">hello@dewly.in</a><a href="#">+91 98765 43210</a></div>
+    </div>
+    <div class="wrap foot-bottom"><span>© <span id="year"></span> dewly. All rights reserved.</span><span>UPI · Cards · COD</span></div>
+  </footer>
+
+  <!-- Bag -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="bag" id="bag" aria-label="Your bag">
+    <div class="bag-head"><h3>Your bag</h3><button class="x" data-close aria-label="Close bag">✕</button></div>
+    <div class="ship"><p id="shipMsg"></p><div class="ship-bar"><span id="shipBar"></span></div></div>
+    <div class="bag-body" id="bagBody"></div>
+    <div class="bag-foot" id="bagFoot">
+      <div class="row"><span>Subtotal</span><span id="bSub">₹0</span></div>
+      <div class="row save" id="bSaveRow" hidden><span>Routine &amp; subscription savings</span><span id="bSave">−₹0</span></div>
+      <div class="row"><span>Shipping</span><span id="bShip">₹0</span></div>
+      <div class="row total"><span>Total</span><span id="bTotal">₹0</span></div>
+      <button class="btn btn-plum btn-full" id="checkout">Checkout on WhatsApp</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
