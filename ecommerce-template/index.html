@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XYRON — Premium Lifestyle Store</title>
+  <meta name="description" content="XYRON — premium watches, sneakers, audio and accessories. Free shipping across India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Announcement bar -->
+  <div class="announce">
+    <div class="announce-track">
+      <span>✦ Free shipping on orders above ₹1,999</span>
+      <span>✦ Use code <b>XYRON10</b> for 10% off your first order</span>
+      <span>✦ Easy 7-day returns</span>
+      <span>✦ Cash on Delivery available</span>
+      <span>✦ Free shipping on orders above ₹1,999</span>
+      <span>✦ Use code <b>XYRON10</b> for 10% off your first order</span>
+      <span>✦ Easy 7-day returns</span>
+      <span>✦ Cash on Delivery available</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <a href="#" class="logo">XYRON<span>.</span></a>
+
+      <nav class="nav" id="nav">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#shop">Shop</a>
+        <a href="#deal">Deals</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" id="searchInput" placeholder="Search products…" aria-label="Search products" />
+        </div>
+        <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.3 3.4 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.7 1.2-1.6 2.8-2.7 4.8-2.7 3.8 0 6.2 3.8 4.7 7.3C19.5 16.4 12 21 12 21z"/></svg>
+          <span class="badge" id="wishCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Cart">
+          <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-text reveal">
+        <span class="eyebrow">New Collection · 2026</span>
+        <h1>Crafted for those who <em>stand out.</em></h1>
+        <p>Premium watches, sneakers, audio &amp; everyday essentials, all chosen for quality and built to last.</p>
+        <div class="hero-cta">
+          <a href="#shop" class="btn btn-primary">Shop Now</a>
+          <a href="#categories" class="btn btn-ghost">Explore Collections →</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong data-count="25000">0</strong><span>Happy customers</span></div>
+          <div><strong data-count="480">0</strong><span>Premium products</span></div>
+          <div><strong>4.9★</strong><span>Average rating</span></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-card hero-card-main">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900&q=80" alt="Premium watch" data-fallback="Watch" />
+        </div>
+        <div class="hero-float hero-float-1">
+          <span class="dot"></span> <b>Order shipped</b><small>Arrives in 2 days</small>
+        </div>
+        <div class="hero-float hero-float-2">
+          <b>-40%</b><small>Festive Sale</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand strip -->
+  <section class="brands">
+    <div class="brands-track">
+      <span>AURELIA</span><span>NORDLINE</span><span>KAIRO</span><span>VELOUR</span><span>MONOLITH</span><span>OSTERIA</span>
+      <span>AURELIA</span><span>NORDLINE</span><span>KAIRO</span><span>VELOUR</span><span>MONOLITH</span><span>OSTERIA</span>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Collections</span>
+        <h2>Shop by Category</h2>
+      </div>
+      <div class="cat-grid">
+        <a href="#shop" class="cat-card cat-lg reveal" data-cat="watches">
+          <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=900&q=80" alt="Watches" data-fallback="Watches" />
+          <div class="cat-info"><h3>Watches</h3><span>Explore →</span></div>
+        </a>
+        <a href="#shop" class="cat-card reveal" data-cat="sneakers">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&q=80" alt="Sneakers" data-fallback="Sneakers" />
+          <div class="cat-info"><h3>Sneakers</h3><span>Explore →</span></div>
+        </a>
+        <a href="#shop" class="cat-card reveal" data-cat="audio">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&q=80" alt="Audio" data-fallback="Audio" />
+          <div class="cat-info"><h3>Audio</h3><span>Explore →</span></div>
+        </a>
+        <a href="#shop" class="cat-card cat-wide reveal" data-cat="accessories">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1100&q=80" alt="Accessories" data-fallback="Accessories" />
+          <div class="cat-info"><h3>Bags &amp; Accessories</h3><span>Explore →</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section section-alt" id="shop">
+    <div class="container">
+      <div class="section-head section-head-row reveal">
+        <div>
+          <span class="eyebrow">Best Sellers</span>
+          <h2>Trending Products</h2>
+        </div>
+        <div class="shop-tools">
+          <div class="filters" id="filters">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="watches">Watches</button>
+            <button class="chip" data-filter="sneakers">Sneakers</button>
+            <button class="chip" data-filter="audio">Audio</button>
+            <button class="chip" data-filter="accessories">Accessories</button>
+          </div>
+          <select id="sortSelect" class="sort" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No products found. Try a different search.</p>
+    </div>
+  </section>
+
+  <!-- Deal of the day -->
+  <section class="section" id="deal">
+    <div class="container">
+      <div class="deal reveal">
+        <div class="deal-img">
+          <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=900&q=80" alt="Smart watch deal" data-fallback="Smart Watch" />
+        </div>
+        <div class="deal-text">
+          <span class="eyebrow eyebrow-light">Deal of the Day</span>
+          <h2>Aurelia Smart Watch Pro</h2>
+          <p>AMOLED display, 14-day battery, heart-rate &amp; SpO2 tracking. Limited stock at this price.</p>
+          <div class="deal-price"><span class="now">₹4,999</span><span class="was">₹8,999</span><span class="off">44% OFF</span></div>
+          <div class="countdown" id="countdown">
+            <div><b id="cdH">00</b><small>Hours</small></div>
+            <div><b id="cdM">00</b><small>Mins</small></div>
+            <div><b id="cdS">00</b><small>Secs</small></div>
+          </div>
+          <button class="btn btn-light" data-add="deal">Grab the Deal</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container features-grid">
+      <div class="feature reveal">
+        <svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        <div><h4>Free Shipping</h4><p>On orders above ₹1,999</p></div>
+      </div>
+      <div class="feature reveal">
+        <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg>
+        <div><h4>Easy Returns</h4><p>7-day hassle-free returns</p></div>
+      </div>
+      <div class="feature reveal">
+        <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        <div><h4>Secure Payment</h4><p>UPI, cards &amp; COD</p></div>
+      </div>
+      <div class="feature reveal">
+        <svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1"/><rect x="17" y="13" width="4" height="6" rx="1"/></svg>
+        <div><h4>24/7 Support</h4><p>We're here on WhatsApp</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section-alt" id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Testimonials</span>
+        <h2>Loved by Thousands</h2>
+      </div>
+      <div class="review-grid">
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p>"The quality of the watch blew me away. The packaging felt truly premium, and delivery took only 2 days."</p>
+          <div class="reviewer"><span class="avatar">RS</span><div><b>Rahul Sharma</b><small>Delhi · Verified Buyer</small></div></div>
+        </div>
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p>"Best sneakers I've bought online. True to size, super comfortable, and the return process is genuinely easy."</p>
+          <div class="reviewer"><span class="avatar">AP</span><div><b>Ananya Patel</b><small>Ahmedabad · Verified Buyer</small></div></div>
+        </div>
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p>"Headphones sound amazing for the price. Customer support replied on WhatsApp within minutes!"</p>
+          <div class="reviewer"><span class="avatar">VK</span><div><b>Vikram Kumar</b><small>Bengaluru · Verified Buyer</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter reveal">
+        <h2>Get 10% off your first order</h2>
+        <p>Join our list for early access to drops, exclusive offers and style tips.</p>
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required aria-label="Email address" />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="logo">XYRON<span>.</span></a>
+        <p class="footer-about">Premium lifestyle products, chosen with care and delivered across India.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <a href="#shop">Watches</a><a href="#shop">Sneakers</a><a href="#shop">Audio</a><a href="#shop">Accessories</a>
+      </div>
+      <div>
+        <h5>Help</h5>
+        <a href="#">Track Order</a><a href="#">Shipping Policy</a><a href="#">Returns &amp; Refunds</a><a href="#">FAQs</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>📍 Mumbai, Maharashtra</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@xyron.store</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> XYRON. All rights reserved.</span>
+      <span class="pay">UPI · Visa · Mastercard · RuPay · COD</span>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="drawer-head">
+      <h3>Your Cart</h3>
+      <button class="icon-btn" id="closeCart" aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="ship-progress">
+      <p id="shipText">Add ₹1,999 more for <b>FREE shipping</b></p>
+      <div class="bar"><span id="shipBar"></span></div>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="row"><span>Subtotal</span><b id="cartSubtotal">₹0</b></div>
+      <p class="muted">Taxes included. Shipping calculated at checkout.</p>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">Checkout on WhatsApp</button>
+    </div>
+  </aside>
+
+  <!-- Quick view modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="icon-btn modal-close" id="closeModal" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
