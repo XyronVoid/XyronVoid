@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basketo — Fresh Groceries Delivered</title>
+  <meta name="description" content="Basketo — fresh fruits, vegetables, dairy and daily essentials delivered to your door in 30 minutes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="wrap header-row">
+      <a href="#" class="logo"><span class="logo-mark">🧺</span>basketo</a>
+
+      <button class="location" id="locationBtn">
+        <span class="loc-eta">⚡ Delivery in <b>30 mins</b></span>
+        <span class="loc-pin">📍 <span id="pinLabel">Enter your pincode</span> ▾</span>
+      </button>
+
+      <div class="search" id="searchBox">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="Search for &quot;milk&quot;, &quot;tomato&quot;, &quot;bread&quot;…" autocomplete="off" aria-label="Search products" />
+        <div class="suggest" id="suggest"></div>
+      </div>
+
+      <button class="cart-btn" id="cartBtn">
+        <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>
+        <span class="cart-btn-text"><small id="cartItemsLabel">0 items</small><b id="cartTotalLabel">₹0</b></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero offers -->
+    <section class="wrap hero">
+      <div class="hero-main">
+        <div class="hero-copy">
+          <span class="pill">🌿 Farm fresh, every day</span>
+          <h1>Groceries at your door in <span class="hl">30 minutes</span></h1>
+          <p>Fresh fruits, veggies, dairy &amp; 5,000+ daily essentials, at prices better than your local market.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-green">Start Shopping →</a>
+            <span class="hand">First order? Get ₹100 off!</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <span class="e e1">🥑</span><span class="e e2">🍓</span><span class="e e3">🥕</span>
+          <span class="e e4">🥛</span><span class="e e5">🍌</span><span class="e e6">🥦</span>
+          <div class="basket">🧺</div>
+        </div>
+      </div>
+      <div class="offer offer-orange">
+        <div><small>Weekend Sale</small><h3>Up to 40% off on fruits</h3><a href="#products" data-jump="Fruits">Shop now →</a></div>
+        <span class="offer-emoji">🍉</span>
+      </div>
+      <div class="offer offer-blue">
+        <div><small>Dairy Fresh</small><h3>Milk &amp; curd from ₹28</h3><a href="#products" data-jump="Dairy">Shop now →</a></div>
+        <span class="offer-emoji">🧀</span>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="wrap section">
+      <div class="sec-head"><h2>Shop by category</h2></div>
+      <div class="cats" id="cats"></div>
+    </section>
+
+    <!-- Products -->
+    <section class="wrap section" id="products">
+      <div class="sec-head">
+        <h2 id="productsTitle">Best sellers</h2>
+        <div class="tabs" id="tabs"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- Combos -->
+    <section class="wrap section">
+      <div class="sec-head"><h2>Value combos <span class="hand hand-sm">save more!</span></h2></div>
+      <div class="combos" id="combos"></div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how">
+      <div class="wrap">
+        <h2>How Basketo works</h2>
+        <div class="steps">
+          <div class="step"><span>📱</span><h4>Pick your items</h4><p>Choose from 5,000+ fresh products</p></div>
+          <div class="step"><span>🕒</span><h4>Choose a slot</h4><p>Express in 30 mins or a time that suits you</p></div>
+          <div class="step"><span>🛵</span><h4>Get it delivered</h4><p>Fresh to your door, with cash or UPI on delivery</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="wrap section trust">
+      <div><span>🥬</span><b>Farm fresh</b><small>Sourced daily from local farms</small></div>
+      <div><span>💸</span><b>Best prices</b><small>Cheaper than the local market</small></div>
+      <div><span>↩️</span><b>No-questions returns</b><small>Not fresh? Full refund</small></div>
+      <div><span>🔒</span><b>Safe payments</b><small>UPI, cards &amp; COD</small></div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="wrap section">
+      <div class="sec-head"><h2>Families love Basketo 💚</h2></div>
+      <div class="reviews">
+        <figure><blockquote>"The vegetables are fresher than my local mandi, and they always arrive within 25 minutes. My whole society orders from here now!"</blockquote><figcaption><b>Priya M.</b> · Thane ⭐⭐⭐⭐⭐</figcaption></figure>
+        <figure><blockquote>"I love the slot booking. I order at night and everything arrives at 7am before office. The milk is always chilled."</blockquote><figcaption><b>Rohit S.</b> · Noida ⭐⭐⭐⭐⭐</figcaption></figure>
+        <figure><blockquote>"I got a bad mango once and the refund came in 2 minutes on WhatsApp. Super trustworthy."</blockquote><figcaption><b>Fatima K.</b> · Lucknow ⭐⭐⭐⭐⭐</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- App banner -->
+    <section class="wrap section">
+      <div class="app-banner">
+        <div>
+          <h2>Weekly deals in your inbox 📬</h2>
+          <p>Get exclusive coupons and know about fresh arrivals first.</p>
+          <form class="sub-form" id="subForm">
+            <input type="email" placeholder="Your email address" required aria-label="Email" />
+            <button class="btn btn-orange" type="submit">Subscribe</button>
+          </form>
+        </div>
+        <span class="app-emoji">🛒</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a href="#" class="logo"><span class="logo-mark">🧺</span>basketo</a>
+        <p>Fresh groceries delivered in minutes. Proudly serving neighbourhoods across India.</p>
+      </div>
+      <div><h5>Categories</h5><a href="#products">Fruits &amp; Vegetables</a><a href="#products">Dairy &amp; Bakery</a><a href="#products">Snacks &amp; Drinks</a><a href="#products">Staples</a></div>
+      <div><h5>Help</h5><a href="#">Track order</a><a href="#">Refund policy</a><a href="#">Delivery areas</a><a href="#">FAQs</a></div>
+      <div><h5>Contact</h5><p>📞 +91 98765 43210</p><p>✉️ hello@basketo.in</p><p>🕖 7am – 11pm, all days</p></div>
+    </div>
+    <div class="wrap foot-bottom">© <span id="year"></span> Basketo · Made with 💚 in India</div>
+  </footer>
+
+  <!-- Mobile sticky cart bar -->
+  <button class="cart-bar" id="cartBar" hidden>
+    <span><b id="barCount">0 items</b> · <span id="barTotal">₹0</span></span>
+    <span>View cart →</span>
+  </button>
+
+  <!-- Pincode modal -->
+  <div class="modal" id="pinModal">
+    <div class="modal-card">
+      <button class="x" data-close aria-label="Close">✕</button>
+      <span class="modal-emoji">📍</span>
+      <h3>Where should we deliver?</h3>
+      <p>Enter your pincode to check delivery availability.</p>
+      <form id="pinForm" class="pin-form">
+        <input id="pinInput" inputmode="numeric" maxlength="6" placeholder="e.g. 400001" aria-label="Pincode" />
+        <button class="btn btn-green" type="submit">Check</button>
+      </form>
+      <p class="pin-result" id="pinResult"></p>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Cart">
+    <div class="drawer-head">
+      <h3>My Cart</h3>
+      <button class="x" data-close aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="drawer-body" id="drawerBody">
+      <div class="eta-card"><span>⚡</span><div><b>Delivery in 30 minutes</b><small id="slotLabel">Express delivery</small></div></div>
+
+      <div class="cart-list" id="cartList"></div>
+
+      <div id="cartExtras">
+        <div class="box">
+          <h4>Choose a delivery slot</h4>
+          <div class="slots" id="slots"></div>
+        </div>
+
+        <div class="box">
+          <h4>Coupons</h4>
+          <div class="coupons" id="coupons"></div>
+        </div>
+
+        <div class="box bill">
+          <h4>Bill details</h4>
+          <div class="bill-row"><span>Item total</span><span id="bItems">₹0</span></div>
+          <div class="bill-row"><span>Delivery fee <small id="bDeliveryNote"></small></span><span id="bDelivery">₹0</span></div>
+          <div class="bill-row"><span>Handling charge</span><span id="bHandling">₹5</span></div>
+          <div class="bill-row green" id="bCouponRow" hidden><span>Coupon discount</span><span id="bCoupon">−₹0</span></div>
+          <div class="bill-row total"><span>To pay</span><span id="bTotal">₹0</span></div>
+          <div class="savings" id="savings" hidden></div>
+        </div>
+
+        <div class="box">
+          <h4>Delivery details</h4>
+          <form id="addrForm" class="addr">
+            <input id="aName" placeholder="Your name" required />
+            <input id="aPhone" placeholder="Phone number" inputmode="numeric" required />
+            <textarea id="aAddr" rows="2" placeholder="House no, building, area, landmark" required></textarea>
+            <div class="pay">
+              <label><input type="radio" name="pay" value="Cash on Delivery" checked /> 💵 Cash on Delivery</label>
+              <label><input type="radio" name="pay" value="UPI on Delivery" /> 📱 UPI on Delivery</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-foot" id="drawerFoot">
+      <button class="btn btn-green btn-full" id="placeOrder">
+        <span>Place order on WhatsApp</span><b id="footTotal">₹0</b>
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
